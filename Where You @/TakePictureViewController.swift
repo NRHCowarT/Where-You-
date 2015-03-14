@@ -68,24 +68,29 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
         var newPicture = PFObject(className: "Picture")
         newPicture["creator"] = PFUser.currentUser()
         
-        let image = resizeImage(pictureCapturedView.image!, withSize: CGSizeMake(540, 540))
+        if let originalImage = pictureCapturedView.image {
+            
+            if let image = resizeImage(originalImage, withSize: CGSizeMake(540, 540)) as UIImage? {
+                
+                let imageData = UIImagePNGRepresentation(image)
+                
+                let imageFile = PFFile(name: "\(PFUser.currentUser().username)\(pictureNumber++).png", data: imageData)
+                newPicture["image"] = imageFile
+                
+                newPicture.saveInBackground()
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as SelectCorrectVenueVC
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
+            
+        }
         
-        
-        let imageData = UIImagePNGRepresentation(image)
-        
-        let imageFile = PFFile(name: "\(PFUser.currentUser().username)\(pictureNumber++).png", data: imageData)
-        newPicture["image"] = imageFile
+//            var alert = UIAlertController(title: "Take a Photo!", message: "Take a Photo!", preferredStyle: UIAlertControllerStyle.Alert)
+//            
+//        } else {
 
-        newPicture.saveInBackground()
-        
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectVenuesVC") as LoginViewController
-        self.presentViewController(vc, animated: true, completion: nil)
-        
-        
-        
         // present vc then dismiss vc
-        
     }
 
     override func didReceiveMemoryWarning() {

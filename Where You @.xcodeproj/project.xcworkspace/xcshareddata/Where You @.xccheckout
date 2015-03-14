@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5E583575-0475-4E06-B4BA-209E3C49E422</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Where You @</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>467080C9412B0A44A005706CCE10EB4BCA11D98C</key>
+		<string>https://github.com/NRHCowarT/Where-You-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Where You @.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>467080C9412B0A44A005706CCE10EB4BCA11D98C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/NRHCowarT/Where-You-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>467080C9412B0A44A005706CCE10EB4BCA11D98C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>467080C9412B0A44A005706CCE10EB4BCA11D98C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Where%20You%20@</string>
+		</dict>
+	</array>
+</dict>
+</plist>

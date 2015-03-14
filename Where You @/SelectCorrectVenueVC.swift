@@ -1,8 +1,8 @@
 //
-//  SelectVenuesViewController.swift
+//  SelectCorrectVenueVC.swift
 //  Where You @
 //
-//  Created by Nick Cowart on 3/4/15.
+//  Created by Nick Cowart on 3/13/15.
 //  Copyright (c) 2015 Nick Cowart. All rights reserved.
 //
 
@@ -10,17 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-
-var onceToken : dispatch_once_t = 0
-
-class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
-
+class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
+    
     var foundVenues:[AnyObject] = []
     
-    var selectedVenues:[AnyObject] = []
+    var correctVenue:[AnyObject] = []
     
     var manager = CLLocationManager()
-                            // based off the array
+    // based off the array
     @IBOutlet weak var selectVenuesTableView: UITableView!
     
     @IBOutlet weak var selectVenuesMapView: MKMapView!
@@ -40,9 +37,9 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         selectVenuesMapView.delegate = self
         selectVenuesMapView.mapType = MKMapType.Standard
         selectVenuesMapView.showsUserLocation = true
-
         
-
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -62,22 +59,22 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
         
-//        dispatch_once(&onceToken) { () -> Void in
+        //        dispatch_once(&onceToken) { () -> Void in
         
-            println(locations.last)
+        println(locations.last)
+        
+        if let location = locations.last as? CLLocation {
+            // array
+            self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
             
-            if let location = locations.last as? CLLocation {
-                // array
-                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
-                
-                self.selectVenuesTableView.reloadData()
-                
-                zoomToLocation(location)
-                
-                // request to foursquare for venues with location
-            }
+            self.selectVenuesTableView.reloadData()
             
-//        }
+            zoomToLocation(location)
+            
+            // request to foursquare for venues with location
+        }
+        
+        //        }
         
         
         manager.stopUpdatingLocation()
@@ -86,11 +83,11 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     }
     
     func zoomToLocation(location: CLLocation){
-//        MKCoordinateRegion mapRegion;
-//        mapRegion.center = mapView.userLocation.coordinate;
-//        mapRegion.span.latitudeDelta = 0.2;
-//        mapRegion.span.longitudeDelta = 0.2;
-//        
+        //        MKCoordinateRegion mapRegion;
+        //        mapRegion.center = mapView.userLocation.coordinate;
+        //        mapRegion.span.latitudeDelta = 0.2;
+        //        mapRegion.span.longitudeDelta = 0.2;
+        //
         var span = MKCoordinateSpanMake(0.01, 0.01)
         var mapRegion = MKCoordinateRegionMake(location.coordinate, span)
         
@@ -104,7 +101,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            // array count
+        // array count
         return foundVenues.count
     }
     
@@ -113,7 +110,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as UITableViewCell
         
         let venue = foundVenues[indexPath.row] as [String:AnyObject]
-
+        
         cell.textLabel?.text = venue["name"] as? String
         
 //        cell.venueStatusButton.addTarget(self, action: "selectUsersVenue:", forControlEvents: UIControlEvents.TouchUpInside)
@@ -128,30 +125,34 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         
         println(venue["name"])
         
-        selectedVenues.append(venue)
+        correctVenue.append(venue)
         
-        if selectedVenues.count == 3 {
+        if correctVenue.count == 1 {
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectVenuesVC") as SelectVenuesViewController
+            self.navigationController?.pushViewController(vc, animated: true)
             
             // move on to next step pfobject of all info.save in background
             
         }
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		980569DE1AB285C80056C5E1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		980CA04B1AA7EB8600AD5149 /* FourSquareRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA04A1AA7EB8600AD5149 /* FourSquareRequest.swift */; };
 		980CA04F1AA7F14200AD5149 /* PlacesTaggedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA04E1AA7F14200AD5149 /* PlacesTaggedVC.swift */; };
 		980CA0511AA7F72B00AD5149 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA0501AA7F72B00AD5149 /* LoginViewController.swift */; };
@@ -17,7 +16,7 @@
 		980CA05B1AA8035E00AD5149 /* GuessFriendTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05A1AA8035E00AD5149 /* GuessFriendTableVC.swift */; };
 		980CA05D1AA8053E00AD5149 /* GuessFriendsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */; };
 		980CA05F1AA8092E00AD5149 /* LeaderBoardTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05E1AA8092E00AD5149 /* LeaderBoardTableVC.swift */; };
-		9833E7B01AB2820C003F0BFE /* SelectVenueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833E7AF1AB2820C003F0BFE /* SelectVenueTableViewCell.swift */; };
+		9823EB731AB33B1E0058D09C /* SelectCorrectVenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */; };
 		984D27091AA3B9AE0026C700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984D27081AA3B9AE0026C700 /* Images.xcassets */; };
 		984D270C1AA3B9AE0026C700 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984D270A1AA3B9AE0026C700 /* LaunchScreen.xib */; };
 		984D27181AA3B9AE0026C700 /* Where_You__Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D27171AA3B9AE0026C700 /* Where_You__Tests.swift */; };
@@ -37,6 +36,7 @@
 		984D273E1AA3BD250026C700 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273D1AA3BD250026C700 /* libz.dylib */; };
 		984D27401AA3BD3A0026C700 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273F1AA3BD3A0026C700 /* libsqlite3.dylib */; };
 		984D274B1AA3DD680026C700 /* DesignalbeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D274A1AA3DD680026C700 /* DesignalbeButton.swift */; };
+		98B95C301AB377E9003035DE /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		98E678651AA8F9F000CB2AF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D27011AA3B9AE0026C700 /* AppDelegate.swift */; };
 		98E678681AA8FD5B00CB2AF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E678661AA8FD5B00CB2AF8 /* Main.storyboard */; };
 		98E6786C1AA909E700CB2AF8 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E6786A1AA909E700CB2AF8 /* FBAudienceNetwork.framework */; };
@@ -62,7 +62,7 @@
 		980CA05A1AA8035E00AD5149 /* GuessFriendTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessFriendTableVC.swift; sourceTree = "<group>"; };
 		980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessFriendsDetailVC.swift; sourceTree = "<group>"; };
 		980CA05E1AA8092E00AD5149 /* LeaderBoardTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableVC.swift; path = "Where You @/LeaderBoardTableVC.swift"; sourceTree = "<group>"; };
-		9833E7AF1AB2820C003F0BFE /* SelectVenueTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectVenueTableViewCell.swift; sourceTree = "<group>"; };
+		9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCorrectVenueVC.swift; sourceTree = "<group>"; };
 		984D26FC1AA3B9AE0026C700 /* Where You @.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where You @.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		984D27001AA3B9AE0026C700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		984D27011AA3B9AE0026C700 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 				984D27341AA3BCD40026C700 /* MobileCoreServices.framework in Frameworks */,
 				984D27321AA3BCBD0026C700 /* CoreLocation.framework in Frameworks */,
 				984D27301AA3BCB00026C700 /* CoreGraphics.framework in Frameworks */,
-				980569DE1AB285C80056C5E1 /* FacebookSDK.framework in Frameworks */,
+				98B95C301AB377E9003035DE /* FacebookSDK.framework in Frameworks */,
 				984D272E1AA3BCA20026C700 /* CFNetwork.framework in Frameworks */,
 				984D272C1AA3BC8E0026C700 /* AudioToolbox.framework in Frameworks */,
 				984D27271AA3BC670026C700 /* Parse.framework in Frameworks */,
@@ -176,10 +176,10 @@
 				980CA05A1AA8035E00AD5149 /* GuessFriendTableVC.swift */,
 				980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */,
 				980CA0561AA7FFA900AD5149 /* TakePictureViewController.swift */,
+				9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */,
 				980CA0581AA8018200AD5149 /* SelectVenuesViewController.swift */,
 				980CA0551AA7FF1A00AD5149 /* Tab Bar Controller */,
 				984D26FF1AA3B9AE0026C700 /* Supporting Files */,
-				9833E7AF1AB2820C003F0BFE /* SelectVenueTableViewCell.swift */,
 			);
 			path = "Where You @";
 			sourceTree = "<group>";
@@ -350,13 +350,13 @@
 				98E678651AA8F9F000CB2AF8 /* AppDelegate.swift in Sources */,
 				980CA0511AA7F72B00AD5149 /* LoginViewController.swift in Sources */,
 				980CA05F1AA8092E00AD5149 /* LeaderBoardTableVC.swift in Sources */,
-				9833E7B01AB2820C003F0BFE /* SelectVenueTableViewCell.swift in Sources */,
 				980CA04B1AA7EB8600AD5149 /* FourSquareRequest.swift in Sources */,
 				980CA0571AA7FFA900AD5149 /* TakePictureViewController.swift in Sources */,
 				980CA05B1AA8035E00AD5149 /* GuessFriendTableVC.swift in Sources */,
 				984D274B1AA3DD680026C700 /* DesignalbeButton.swift in Sources */,
 				980CA0531AA7FBC400AD5149 /* MenuViewController.swift in Sources */,
 				980CA05D1AA8053E00AD5149 /* GuessFriendsDetailVC.swift in Sources */,
+				9823EB731AB33B1E0058D09C /* SelectCorrectVenueVC.swift in Sources */,
 				980CA0591AA8018200AD5149 /* SelectVenuesViewController.swift in Sources */,
 				980CA04F1AA7F14200AD5149 /* PlacesTaggedVC.swift in Sources */,
 			);
@@ -517,6 +517,15 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -537,6 +546,15 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
