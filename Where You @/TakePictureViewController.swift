@@ -13,10 +13,10 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
     var imagePicker = UIImagePickerController()
     
     var pictureNumber:Int = 0
-
+    
     @IBOutlet weak var pictureCapturedView: UIImageView!
     @IBOutlet weak var takePictureLabel: UIButton!
-   
+    
     @IBAction func menuButton(sender: AnyObject) {
         
         
@@ -27,8 +27,8 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
     @IBAction func takePictureButton(sender: AnyObject) {
         
         presentViewController(imagePicker, animated: true, completion: nil)
-
-
+        
+        
     }
     
     
@@ -37,7 +37,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
         
         imagePicker.delegate = self
         imagePicker.sourceType = .Camera
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -60,7 +60,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
         UIGraphicsEndImageContext()
         
         return newImage
-    
+        
     }
     
     @IBAction func savePictureButton(sender: AnyObject) {
@@ -82,31 +82,36 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as SelectCorrectVenueVC
                 self.navigationController?.pushViewController(vc, animated: true)
+                
             }
+            
+        }else{
+            
+            let alert = UIAlertController(title: "Take a Pic!", message: "You forgetting something?", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+            alert.addAction(defaultAction)
+            
+            presentViewController(alert, animated: true, completion: nil)
             
         }
         
-//            var alert = UIAlertController(title: "Take a Photo!", message: "Take a Photo!", preferredStyle: UIAlertControllerStyle.Alert)
-//            
-//        } else {
-
-        // present vc then dismiss vc
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }

@@ -578,6 +578,9 @@
                                         <real key="value" value="7"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addCustomLocationButton:" destination="itW-w3-WLx" eventType="touchUpInside" id="xF7-Ea-c0D"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94482940169999996" blue="0.3575771016" alpha="1" colorSpace="calibratedRGB"/>
