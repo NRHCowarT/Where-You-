@@ -8,7 +8,7 @@
 
 import UIKit
 import MapKit
-import CoreLocation
+//import CoreLocation
 
 
 var onceToken : dispatch_once_t = 0
@@ -17,10 +17,8 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 
     var foundVenues:[AnyObject] = []
     
-    var selectedVenues:[AnyObject] = []
-    
-    var manager = CLLocationManager()
-                            // based off the array
+    var currentLocation: CLLocation?
+
     @IBOutlet weak var selectVenuesTableView: UITableView!
     
     @IBOutlet weak var selectVenuesMapView: MKMapView!
@@ -28,19 +26,21 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         selectVenuesTableView.delegate = self
         selectVenuesTableView.dataSource = self
         selectVenuesTableView.allowsMultipleSelection = true
-        
-        
-        
-        
         
         selectVenuesMapView.delegate = self
         selectVenuesMapView.mapType = MKMapType.Standard
         selectVenuesMapView.showsUserLocation = true
 
+        
+//        if currentLocation != nil {
+        
+        
+//        }
+        
         
 
         // Do any additional setup after loading the view.
@@ -48,42 +48,46 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        manager.requestWhenInUseAuthorization()
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyBest
-        manager.startUpdatingLocation()
+//        manager.requestWhenInUseAuthorization()
+//        manager.delegate = self
+//        manager.desiredAccuracy = kCLLocationAccuracyBest
+//        manager.startUpdatingLocation()
+        
+        println(currentLocation)
+        zoomToLocation(currentLocation!)
+
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        manager.delegate = nil
+//        manager.delegate = nil
     }
     
     
-    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-        
-//        dispatch_once(&onceToken) { () -> Void in
-        
-            println(locations.last)
-            
-            if let location = locations.last as? CLLocation {
-                // array
-                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
-                
-                self.selectVenuesTableView.reloadData()
-                
-                zoomToLocation(location)
-                
-                // request to foursquare for venues with location
-            }
-            
-//        }
-        
-        
-        manager.stopUpdatingLocation()
-        manager.delegate = nil
-        
-    }
+//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+//        
+////        dispatch_once(&onceToken) { () -> Void in
+//        
+//            println(locations.last)
+//            
+//            if let location = locations.last as? CLLocation {
+//                // array
+//                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
+//                
+//                self.selectVenuesTableView.reloadData()
+//                
+//                zoomToLocation(location)
+//                
+//                // request to foursquare for venues with location
+//            }
+//            
+////        }
+//        
+//        
+//        manager.stopUpdatingLocation()
+//        manager.delegate = nil
+//        
+//    }
     
     func zoomToLocation(location: CLLocation){
 //        MKCoordinateRegion mapRegion;
@@ -104,8 +108,8 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-            // array count
-        return foundVenues.count
+            return foundVenues.count
+    
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -123,16 +127,39 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+
         let venue = foundVenues[indexPath.row] as [String:AnyObject]
         
         println(venue["name"])
         
-        selectedVenues.append(venue)
+        GameData.mainData().selectedVenues.append(venue)
         
-        if selectedVenues.count == 3 {
+        //println(GameData.mainData().selectedVenues)
+        
+        if GameData.mainData().selectedVenues.count == 3 {
+            
+            GameData.mainData().newPicture?["selectedVenues"] = GameData.mainData().selectedVenues
+            
+            GameData.mainData().newPicture?.saveInBackground()
+            
+            GameData.mainData().newPicture =  nil
+            GameData.mainData().selectedVenues = []
+            GameData.mainData().correctVenue = []
+            
+          //  println(GameData.mainData().selectedVenues)
+            
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC") as MenuViewController
+//            self.navigationController?.popToViewController(vc, animated: true)
+//            
+//            self.presentViewController(vc, animated: true, completion: nil)
+
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             
             // move on to next step pfobject of all info.save in background
+            
+//            self.dismissViewControllerAnimated(false, completion: nil)
+
             
         }
         

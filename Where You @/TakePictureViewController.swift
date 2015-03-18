@@ -65,8 +65,8 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func savePictureButton(sender: AnyObject) {
         
-        var newPicture = PFObject(className: "Picture")
-        newPicture["creator"] = PFUser.currentUser()
+        GameData.mainData().newPicture = PFObject(className: "Picture")
+        GameData.mainData().newPicture?["creator"] = PFUser.currentUser()
         
         if let originalImage = pictureCapturedView.image {
             
@@ -74,10 +74,16 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
                 
                 let imageData = UIImagePNGRepresentation(image)
                 
-                let imageFile = PFFile(name: "\(PFUser.currentUser().username)\(pictureNumber++).png", data: imageData)
-                newPicture["image"] = imageFile
                 
-                newPicture.saveInBackground()
+                //      \(PFUser.currentUser().username)\(pictureNumber++)
+                let imageFile = PFFile(name: "image.png", data: imageData)
+                GameData.mainData().newPicture?["image"] = imageFile
+                
+//                GameData.mainData().gameItems.append(newPicture)
+                
+                GameData.mainData().newPicture?.saveInBackground()
+                
+                println(GameData.mainData().gameItems)
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as SelectCorrectVenueVC
