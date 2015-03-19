@@ -51,47 +51,59 @@ class LoginViewController: UIViewController {
     @IBAction func loginButton(sender: AnyObject) {
         
         //set permission required from the facebook user account
-        var permissions = ["user_about_me", "user_relationships", "user_birthday", "user_location"]
+        var permissions = ["public_profile", "user_friends"]
         
-//        // Login PFUser using Facebook
-//        PFFacebookUtils.logInWithPermissions(permissionArray, block: { (user, error) -> Void in
-//            
-//            if (user == nil) {
-//                if (error == nil) {
-//                    println("User cancelled FB login")
-//                }else{
-//                    println("FaceBook login error: \(error)")
-//                }
-//                
-//                var alert = UIAlertController(title: "Log In Error", message: "\(error)", preferredStyle: UIAlertControllerStyle.Alert)
-//                
-//                alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil))
-//                
-//                self.presentViewController(alert, animated: true, completion: nil)
-//                
-//            } else if user.isNew {
-//                println("User signed up and logged in with Facebook")
-//                
-//            } else {
-//                println("User logged in via Facebook")
-//                
-//            }
-//            
-//            
-//        })
+
       
         PFFacebookUtils.logInWithPermissions(permissions, {
             (user: PFUser!, error: NSError!) -> Void in
             if let user = user {
                 if user.isNew {
-                    println("User signed up and logged in through Facebook!")
+ //                   println("User signed up and logged in through Facebook!")
+                    
+                    
+                    
                 } else {
-                    println("User logged in through Facebook!")
+//                    println("User logged in through Facebook!")
                 }
+                
+                var request = FBRequest.requestForMe()
+                request.startWithCompletionHandler { (connection, result, error) -> Void in
+                    
+                    if error == nil {
+                        
+                        let userData = result as NSDictionary
+                        
+                        println(userData)
+                        
+                        let facebookID = userData["id"] as String
+                        let name = userData["name"] as String
+                        
+                        user["name"] = userData["name"] as String
+                        user["avatar"] = "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
+                        
+                        user.saveInBackground()
+                        
+                        // let picture = userData["profilePicture"]
+                        
+                        //                NSString *location = userData[@"location"][@"name"];
+                        //                NSString *gender = userData[@"gender"];
+                        //                NSString *birthday = userData[@"birthday"];
+                        //                NSString *relationship = userData[@"relationship_status"];
+                        //
+                        ////                NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
+                        //
+                        ////                "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
+                        
+                    }
+                    
+                }
+
+                
                 self.dismissViewControllerAnimated(true, completion: nil)
 
             } else {
-                println("Uh oh. The user cancelled the Facebook login.")
+//                println("Uh oh. The user cancelled the Facebook login.")
             }
         })
         

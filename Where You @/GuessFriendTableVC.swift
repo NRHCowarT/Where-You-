@@ -10,35 +10,27 @@ import UIKit
 
 class GuessFriendTableVC: UITableViewController {
 
-    var myFriends: NSArray = []
+    @IBAction func menuButton(sender: AnyObject) {
+        
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var request = FBRequest.requestForMe()
-        request.startWithCompletionHandler { (connection, result, error) -> Void in
-            
-            if error == nil {
-                
-                let userData = result as NSDictionary
-                
-                let facebookID = userData["id"] as String
-                let name = userData["name"] as String
-                
-//                NSString *location = userData[@"location"][@"name"];
-//                NSString *gender = userData[@"gender"];
-//                NSString *birthday = userData[@"birthday"];
-//                NSString *relationship = userData[@"relationship_status"];
-//                
-//                NSURL *pictureURL = [NSURL URLWithString:[NSString stringWithFormat:@"https://graph.facebook.com/%@/picture?type=large&return_ssl_resources=1", facebookID]];
-
-                
-                
-                
-            }
-            
+        GameData.mainData().refreshGameItems { () -> () in
+        
+            self.tableView.reloadData()
+        
         }
         
+//        println(GameData.mainData().gameItems)
+//        println("next")
+//        println(GameData.mainData().myFriends.count)
+        
+        
+
         var friendRequest = FBRequest.requestForMyFriends()
         
         friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
@@ -48,9 +40,9 @@ class GuessFriendTableVC: UITableViewController {
                 
                 let resultInfo = result as NSDictionary
                 
-                self.myFriends = resultInfo["data"] as NSArray
+                GameData.mainData().myFriends = resultInfo["data"] as NSArray
                 
-                println(self.myFriends)
+//                println(GameData.mainData().myFriends)
                 
                 self.tableView.reloadData()
                 
@@ -81,18 +73,45 @@ class GuessFriendTableVC: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return myFriends.count
+        return GameData.mainData().gameItems.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("guessFriendCell", forIndexPath: indexPath) as GuessFriendsTableViewCell
 
+        let picture = GameData.mainData().gameItems[indexPath.row]
+        
+        let creator = picture["creator"] as PFUser
+        
+        println(creator)
+        
+        if let url = NSURL(string: creator["avatar"] as String) {
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                
+                if let data = NSData(contentsOfURL: url) {
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+
+                        cell.fBProfilePic.image = UIImage(data: data)
+                        
+                    })
+                    
+                }
+                
+            })
+            
+            
+        }
+        
+        cell.friendsName.text = creator["name"] as? String
+        
         // Configure the cell...
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

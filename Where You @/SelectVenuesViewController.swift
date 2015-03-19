@@ -53,7 +53,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 //        manager.desiredAccuracy = kCLLocationAccuracyBest
 //        manager.startUpdatingLocation()
         
-        println(currentLocation)
+//        println(currentLocation)
         zoomToLocation(currentLocation!)
 
     }
@@ -130,7 +130,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 
         let venue = foundVenues[indexPath.row] as [String:AnyObject]
         
-        println(venue["name"])
+//        println(venue["name"])
         
         GameData.mainData().selectedVenues.append(venue)
         

@@ -19,10 +19,11 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
     
     @IBAction func menuButton(sender: AnyObject) {
         
-        
-        
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    
     
     @IBAction func takePictureButton(sender: AnyObject) {
         
@@ -83,7 +84,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
                 
                 GameData.mainData().newPicture?.saveInBackground()
                 
-                println(GameData.mainData().gameItems)
+//                println(GameData.mainData().gameItems)
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as SelectCorrectVenueVC
