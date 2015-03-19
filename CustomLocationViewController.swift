@@ -37,11 +37,11 @@ class CustomLocationViewController: UIViewController {
             
             if let locationName = customLocationTextField.text as String? {
                 
-            println(locationName)
+          //  println(locationName)
          
             GameData.mainData().correctVenue.append(locationName)
                 
-                println(GameData.mainData().correctVenue)
+           //     println(GameData.mainData().correctVenue)
                 
                 dismissViewControllerAnimated(true, completion: nil)
 

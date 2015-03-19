@@ -92,7 +92,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
         
         //        dispatch_once(&onceToken) { () -> Void in
         
-        println(locations.last)
+//        println(locations.last)
         
         if let location = locations.last as? CLLocation {
             // array
@@ -127,7 +127,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
         selectVenuesMapView.setRegion(mapRegion, animated: true)
         
         
-        println(location.coordinate)
+//        println(location.coordinate)
         
     }
     

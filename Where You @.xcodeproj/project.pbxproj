@@ -17,7 +17,7 @@
 		980CA05D1AA8053E00AD5149 /* GuessFriendsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */; };
 		980CA05F1AA8092E00AD5149 /* LeaderBoardTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05E1AA8092E00AD5149 /* LeaderBoardTableVC.swift */; };
 		9823EB731AB33B1E0058D09C /* SelectCorrectVenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */; };
-		982662111AB8C8CF00BBDA50 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
+		982662131AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982662121AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift */; };
 		983B3DCE1AB8A51000BBDF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983B3DCD1AB8A51000BBDF40 /* Main.storyboard */; };
 		984D27091AA3B9AE0026C700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984D27081AA3B9AE0026C700 /* Images.xcassets */; };
 		984D270C1AA3B9AE0026C700 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984D270A1AA3B9AE0026C700 /* LaunchScreen.xib */; };
@@ -38,6 +38,7 @@
 		984D273E1AA3BD250026C700 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273D1AA3BD250026C700 /* libz.dylib */; };
 		984D27401AA3BD3A0026C700 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273F1AA3BD3A0026C700 /* libsqlite3.dylib */; };
 		984D274B1AA3DD680026C700 /* DesignalbeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D274A1AA3DD680026C700 /* DesignalbeButton.swift */; };
+		985A2E821ABB3950007F86EF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		98B95C321AB4EACC003035DE /* CustomLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B95C311AB4EACC003035DE /* CustomLocationViewController.swift */; };
 		98E678651AA8F9F000CB2AF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D27011AA3B9AE0026C700 /* AppDelegate.swift */; };
 		98E6786C1AA909E700CB2AF8 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E6786A1AA909E700CB2AF8 /* FBAudienceNetwork.framework */; };
@@ -65,6 +66,7 @@
 		980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessFriendsDetailVC.swift; sourceTree = "<group>"; };
 		980CA05E1AA8092E00AD5149 /* LeaderBoardTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LeaderBoardTableVC.swift; path = "Where You @/LeaderBoardTableVC.swift"; sourceTree = "<group>"; };
 		9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCorrectVenueVC.swift; sourceTree = "<group>"; };
+		982662121AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuessFriendsTableViewCell.swift; path = "Where You @/GuessFriendsTableViewCell.swift"; sourceTree = "<group>"; };
 		983B3DCD1AB8A51000BBDF40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		984D26FC1AA3B9AE0026C700 /* Where You @.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where You @.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		984D27001AA3B9AE0026C700 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -110,7 +112,7 @@
 				984D27341AA3BCD40026C700 /* MobileCoreServices.framework in Frameworks */,
 				984D27321AA3BCBD0026C700 /* CoreLocation.framework in Frameworks */,
 				984D27301AA3BCB00026C700 /* CoreGraphics.framework in Frameworks */,
-				982662111AB8C8CF00BBDA50 /* FacebookSDK.framework in Frameworks */,
+				985A2E821ABB3950007F86EF /* FacebookSDK.framework in Frameworks */,
 				984D272E1AA3BCA20026C700 /* CFNetwork.framework in Frameworks */,
 				984D272C1AA3BC8E0026C700 /* AudioToolbox.framework in Frameworks */,
 				984D27271AA3BC670026C700 /* Parse.framework in Frameworks */,
@@ -137,6 +139,7 @@
 			children = (
 				980CA04A1AA7EB8600AD5149 /* FourSquareRequest.swift */,
 				984D274A1AA3DD680026C700 /* DesignalbeButton.swift */,
+				982662121AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift */,
 				98F55C8F1AB5468800105576 /* GameData.swift */,
 			);
 			name = Models;
@@ -366,6 +369,7 @@
 				98B95C321AB4EACC003035DE /* CustomLocationViewController.swift in Sources */,
 				98F55C901AB5468800105576 /* GameData.swift in Sources */,
 				980CA0591AA8018200AD5149 /* SelectVenuesViewController.swift in Sources */,
+				982662131AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift in Sources */,
 				980CA04F1AA7F14200AD5149 /* PlacesTaggedVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,6 +560,18 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -576,6 +592,18 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
