@@ -30,7 +30,7 @@ class GameData: NSObject {
         return _mainData
     }
    
-    
+    //   need to make sure only pulling down item that have all required info
     func refreshGameItems(completion: () -> () ){
         
         var feedQuery = PFQuery(className: "Picture")
