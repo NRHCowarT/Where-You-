@@ -9,7 +9,9 @@
 import UIKit
 
 class GuessFriendsDetailVC: UIViewController {
-
+    
+    var picture: PFObject?
+    
     @IBOutlet weak var guessFriendsPicture: UIImageView!
     
     @IBAction func venue1Button(sender: AnyObject) {
@@ -28,6 +30,12 @@ class GuessFriendsDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.hidesBackButton = true
+        
+        println(picture?)
+
+//        guessFriendsPicture.image = gameItems.
+        
         // Do any additional setup after loading the view.
     }
 
