@@ -12,16 +12,24 @@ class GuessFriendsDetailVC: UIViewController {
     
     var picture: PFObject?
     
-    var guessFreindsVenue = []
+    var guessFriendsVenue: NSMutableArray = []
     
     // ask jo why in sit fit we used did set method to convert PFFile to UIImage
     
     @IBOutlet weak var guessFriendsPicture: UIImageView!
     
-    @IBAction func venue1Button(sender: AnyObject) {
+    @IBAction func venue1Button(sender: UIButton) {
+        let correctLocation = picture?["correctVenue"].firstObject as NSDictionary
+        let correctName = correctLocation["name"] as String
+        if correctName == sender.titleLabel?.text {
+            println("Correct")
+        }
+//        arc4random_uniform(array.count - 1)
+        
     }
     
     @IBAction func venue2Button(sender: AnyObject) {
+        
     }
     
     @IBAction func venue3Button(sender: AnyObject) {
@@ -52,21 +60,18 @@ class GuessFriendsDetailVC: UIViewController {
             
         }
 
-            println(picture)
         
-        var incorrectVenues = NSMutableArray()
         var venues = picture?["selectedVenues"] as NSArray
         for venue in  venues {
-            incorrectVenues.addObject(venue["name"] as String)
-            
-            println(incorrectVenues)
+            guessFriendsVenue.addObject(venue["name"] as String)
             
         }
         
+        println(picture)
         
-//            let selectedVenues = picture?["selectedVenues"] as [NSArray]
-//            let incorrectVenues = selectedVenues.valueForKey("name") as [String:AnyObject]
-//        println(incorrectVenues)
+        var correctLocation = picture?["correctVenue"].firstObject as NSDictionary
+        guessFriendsVenue.addObject(correctLocation["name"] as String)
+        
         
         
     }

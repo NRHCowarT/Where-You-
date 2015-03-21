@@ -212,5 +212,5 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
     // Get the new view controller using segue.destinationViewController.
     // Pass the selected object to the new view controller.
     }
-    
+
 }
