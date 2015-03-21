@@ -63,46 +63,13 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 //        manager.delegate = nil
     }
     
-    
-//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//        
-////        dispatch_once(&onceToken) { () -> Void in
-//        
-//            println(locations.last)
-//            
-//            if let location = locations.last as? CLLocation {
-//                // array
-//                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
-//                
-//                self.selectVenuesTableView.reloadData()
-//                
-//                zoomToLocation(location)
-//                
-//                // request to foursquare for venues with location
-//            }
-//            
-////        }
-//        
-//        
-//        manager.stopUpdatingLocation()
-//        manager.delegate = nil
-//        
-//    }
-    
     func zoomToLocation(location: CLLocation){
-//        MKCoordinateRegion mapRegion;
-//        mapRegion.center = mapView.userLocation.coordinate;
-//        mapRegion.span.latitudeDelta = 0.2;
-//        mapRegion.span.longitudeDelta = 0.2;
-//        
+       
         var span = MKCoordinateSpanMake(0.01, 0.01)
         var mapRegion = MKCoordinateRegionMake(location.coordinate, span)
         
         mapRegion.center = location.coordinate
         selectVenuesMapView.setRegion(mapRegion, animated: true)
-        
-        
-        
         
     }
     
@@ -119,9 +86,6 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         let venue = foundVenues[indexPath.row] as [String:AnyObject]
 
         cell.textLabel?.text = venue["name"] as? String
-        
-//        cell.venueStatusButton.addTarget(self, action: "selectUsersVenue:", forControlEvents: UIControlEvents.TouchUpInside)
-//        cell.venueStatusButton.tag = indexPath.row
         
         return cell
     }

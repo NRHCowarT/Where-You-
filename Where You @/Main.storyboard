@@ -740,7 +740,7 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FRR-4P-t0I">
                                 <rect key="frame" x="16" y="30" width="568" height="313"/>
-                                <color key="backgroundColor" red="0.51372549020000002" green="0.92549019610000005" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="313" id="1eF-aG-R2F"/>
                                 </constraints>
@@ -868,6 +868,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="guessFriendsPicture" destination="FRR-4P-t0I" id="CNL-m6-ZQO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wUC-Wz-JiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
