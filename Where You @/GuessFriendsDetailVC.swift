@@ -7,12 +7,34 @@
 //
 
 import UIKit
+import Foundation
+
+//func shuffle<C: MutableCollectionType where C.Index == Int>(var list: C) -> C {
+//    let count = countElements(list)
+//    for i in 0..<(count - 1) {
+//        let j = Int(arc4random_uniform(UInt32(count - i))) + i
+//        swap(&list[i], &list[j])
+//    }
+//    return list
+//}
+
+extension Array {
+    mutating func shuffle() {
+        for i in 0..<(count - 1) {
+            let j = Int(arc4random_uniform(UInt32(count - i))) + i
+            swap(&self[i], &self[j])
+        }
+    }
+}
 
 class GuessFriendsDetailVC: UIViewController {
     
+    
     var picture: PFObject?
     
-    var guessFriendsVenue: NSMutableArray = []
+    var guessFriendsVenue:[AnyObject] = []
+    
+    var shuffleVenues: [AnyObject] = []
     
     // ask jo why in sit fit we used did set method to convert PFFile to UIImage
     
@@ -59,21 +81,32 @@ class GuessFriendsDetailVC: UIViewController {
             }
             
         }
-
         
         var venues = picture?["selectedVenues"] as NSArray
         for venue in  venues {
-            guessFriendsVenue.addObject(venue["name"] as String)
+//            shuffleVenues.addObject(venue["name"] as String)
+            shuffleVenues.append(venue["name"]as String)
             
         }
         
-        println(picture)
-        
         var correctLocation = picture?["correctVenue"].firstObject as NSDictionary
-        guessFriendsVenue.addObject(correctLocation["name"] as String)
+//        shuffleVenues.addObject(correctLocation["name"] as String)
+        shuffleVenues.append(correctLocation["name"] as String)
         
+        println(shuffleVenues)
         
+        shuffleVenues.shuffle()
         
+        println(shuffleVenues)
+        
+        for venues in shuffleVenues {
+            
+            shuffleVenues.removeAtIndex(0)
+            guessFriendsVenue.append(venues)
+            
+        }
+        
+        println(guessFriendsVenue)
     }
     
     override func didReceiveMemoryWarning() {

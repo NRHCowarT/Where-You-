@@ -31,7 +31,7 @@ class MenuViewController: UIViewController {
         // check if logged in
         
         // else present LoginVC
-        
+                
     }
     
     override func viewDidAppear(animated: Bool) {

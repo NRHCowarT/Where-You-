@@ -36,7 +36,7 @@ class GameData: NSObject {
         var feedQuery = PFQuery(className: "Picture")
         
         feedQuery.includeKey("creator")
-        feedQuery.whereKey("creator", notEqualTo: PFUser.currentUser())
+//        feedQuery.whereKey("creator", notEqualTo: PFUser.currentUser())
         feedQuery.whereKeyExists("correctVenue")
         feedQuery.whereKeyExists("selectedVenues")
         

@@ -45,7 +45,7 @@ class CustomLocationViewController: UIViewController {
 
                 delegate?.reloadTheView()   /////
                 
-                println(GameData.mainData().correctVenue)
+//                println(GameData.mainData().correctVenue)
 
                 }
          
