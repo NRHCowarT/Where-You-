@@ -81,6 +81,7 @@ class LoginViewController: UIViewController {
                         
                         user["name"] = userData["name"] as String
                         user["avatar"] = "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
+                        user["playerScore"] = 0
                         
                         user.saveInBackground()
                         

@@ -23,6 +23,12 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     @IBOutlet weak var selectVenuesMapView: MKMapView!
     
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        super.willMoveToParentViewController(parent)
+        
+        GameData.mainData().correctVenue = []
+        GameData.mainData().selectedVenues = []
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

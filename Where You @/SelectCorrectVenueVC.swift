@@ -12,7 +12,7 @@ import CoreLocation
 
 
 
-class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate, reloadPageDelegate {
+class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate, reloadPageDelegate, UINavigationControllerDelegate {
     
     var currentLocation: CLLocation?
     var foundVenues:[AnyObject] = []
@@ -57,6 +57,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println(GameData.mainData().correctVenue)
 //        customLVC.delegate = self
         
         selectVenuesTableView.delegate = self
@@ -161,7 +162,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
         
         foundVenues.removeAtIndex(indexPath.row)
         
-//        println(GameData.mainData().correctVenue)
+        println(GameData.mainData().correctVenue)
         
         if GameData.mainData().correctVenue.count > 0 {
             

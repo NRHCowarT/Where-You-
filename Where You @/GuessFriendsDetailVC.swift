@@ -29,6 +29,11 @@ extension Array {
 
 class GuessFriendsDetailVC: UIViewController {
     
+    var endDate: NSDate?
+    
+    var startDate: NSDate?
+    
+    var score:Int = 0
     
     var picture: PFObject?
     
@@ -38,32 +43,94 @@ class GuessFriendsDetailVC: UIViewController {
     
     // ask jo why in sit fit we used did set method to convert PFFile to UIImage
     
+    @IBOutlet weak var venue1: DesignalbeButton!
+    
+    @IBOutlet weak var venue2: DesignalbeButton!
+    
+    @IBOutlet weak var venue3: DesignalbeButton!
+    
+    @IBOutlet weak var venue4: DesignalbeButton!
+        
     @IBOutlet weak var guessFriendsPicture: UIImageView!
     
+    @IBOutlet weak var timerLabel: UILabel!
+    
     @IBAction func venue1Button(sender: UIButton) {
+        
+        endDate = NSDate()
+        
         let correctLocation = picture?["correctVenue"].firstObject as NSDictionary
         let correctName = correctLocation["name"] as String
         if correctName == sender.titleLabel?.text {
-            println("Correct")
-        }
-//        arc4random_uniform(array.count - 1)
-        
-    }
-    
-    @IBAction func venue2Button(sender: AnyObject) {
-        
-    }
-    
-    @IBAction func venue3Button(sender: AnyObject) {
-    }
-    
-    @IBAction func venue4Button(sender: AnyObject) {
-    }
-    
+            
+            var guessTime = endDate?.timeIntervalSinceDate(startDate!)
+            
+            if guessTime <= 10 {
+                
+                score += 3000
+            
+            } else if guessTime <= 20 {
+                
+                score += 2000
+                
+            } else if guessTime <= 29 {
+                
+                score += 1000
+                
+            }
+            
+            let alert = UIAlertController(title: "Nice Guess. You're Right!!!", message: "You Just Earned \(score) Points!!!", preferredStyle: UIAlertControllerStyle.Alert)
+            
 
+            
+            let defaultAction = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) -> Void in
+                
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                println("boom")
+                
+                
+
+            })
+            
+            score += PFUser.currentUser()["playerScore"] as Int
+            PFUser.currentUser()["playerScore"] = score
+            PFUser.currentUser().saveInBackground()
+            
+            alert.addAction(defaultAction)
+            
+            presentViewController(alert, animated: true, completion: nil)
+            
+        } else {
+            
+            let alert = UIAlertController(title: "Wrong Answer! Better Luck Next Time.", message: "No Points For You!", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            let defaultAction = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) -> Void in
+                
+                self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+                println("boom")
+
+            })
+            
+            alert.addAction(defaultAction)
+            
+            presentViewController(alert, animated: true, completion: nil)
+            
+        }
+    
+        var guessed = PFUser.currentUser()["guessed"] as? [String] ?? []
+        
+        guessed.append(picture!.objectId)
+        
+        PFUser.currentUser()["guessed"] = guessed
+        
+        PFUser.currentUser().saveInBackground()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         self.navigationItem.hidesBackButton = true
         
@@ -107,12 +174,27 @@ class GuessFriendsDetailVC: UIViewController {
         }
         
         println(guessFriendsVenue)
+        
+        venue1.setTitle("\(guessFriendsVenue[0])", forState: UIControlState.Normal)
+        venue2.setTitle("\(guessFriendsVenue[1])", forState: UIControlState.Normal)
+        venue3.setTitle("\(guessFriendsVenue[2])", forState: UIControlState.Normal)
+        venue4.setTitle("\(guessFriendsVenue[3])", forState: UIControlState.Normal)
+        
+        
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        startDate = NSDate()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
     
     /*

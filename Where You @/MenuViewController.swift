@@ -19,9 +19,6 @@ class MenuViewController: UIViewController {
     @IBAction func leaderBoardButton(sender: AnyObject) {
     }
     
-    @IBAction func recentPlacesButton(sender: AnyObject) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()

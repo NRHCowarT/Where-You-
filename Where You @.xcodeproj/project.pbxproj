@@ -38,11 +38,11 @@
 		984D273E1AA3BD250026C700 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273D1AA3BD250026C700 /* libz.dylib */; };
 		984D27401AA3BD3A0026C700 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273F1AA3BD3A0026C700 /* libsqlite3.dylib */; };
 		984D274B1AA3DD680026C700 /* DesignalbeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D274A1AA3DD680026C700 /* DesignalbeButton.swift */; };
-		98837DF91ABE46350057EEF9 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		98B95C321AB4EACC003035DE /* CustomLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B95C311AB4EACC003035DE /* CustomLocationViewController.swift */; };
 		98E678651AA8F9F000CB2AF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D27011AA3B9AE0026C700 /* AppDelegate.swift */; };
 		98E6786C1AA909E700CB2AF8 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E6786A1AA909E700CB2AF8 /* FBAudienceNetwork.framework */; };
 		98F55C901AB5468800105576 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F55C8F1AB5468800105576 /* GameData.swift */; };
+		98FCEA731AC0C9B800E2926C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,7 @@
 				984D27341AA3BCD40026C700 /* MobileCoreServices.framework in Frameworks */,
 				984D27321AA3BCBD0026C700 /* CoreLocation.framework in Frameworks */,
 				984D27301AA3BCB00026C700 /* CoreGraphics.framework in Frameworks */,
-				98837DF91ABE46350057EEF9 /* FacebookSDK.framework in Frameworks */,
+				98FCEA731AC0C9B800E2926C /* FacebookSDK.framework in Frameworks */,
 				984D272E1AA3BCA20026C700 /* CFNetwork.framework in Frameworks */,
 				984D272C1AA3BC8E0026C700 /* AudioToolbox.framework in Frameworks */,
 				984D27271AA3BC670026C700 /* Parse.framework in Frameworks */,
@@ -587,6 +587,12 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,6 +613,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
