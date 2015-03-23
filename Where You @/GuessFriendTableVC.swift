@@ -9,6 +9,10 @@
 import UIKit
 
 class GuessFriendTableVC: UITableViewController {
+    
+  //  let dateFormatter = NSDateFormatter()
+    
+     
 
     @IBAction func menuButton(sender: AnyObject) {
         
@@ -18,6 +22,8 @@ class GuessFriendTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
         
         GameData.mainData().refreshGameItems { () -> () in
         
@@ -84,7 +90,7 @@ class GuessFriendTableVC: UITableViewController {
         
         let creator = picture["creator"] as PFUser
         
-        println(creator)
+//        println(creator)
         
         if let url = NSURL(string: creator["avatar"] as String) {
             
@@ -106,10 +112,33 @@ class GuessFriendTableVC: UITableViewController {
         }
         
         cell.friendsName.text = creator["name"] as? String
+        let date = picture.updatedAt
+
+        let dateFormatter = NSDateFormatter()//3
+        dateFormatter.dateStyle = .ShortStyle //5
+        
+        var dateString = dateFormatter.stringFromDate(date)
+
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.timeStyle = .ShortStyle
+        var timeString = timeFormatter.stringFromDate(date)
+      
+        cell.timeAndDatePosted.text = "\(timeString)" + " " + "\(dateString)"
         
         // Configure the cell...
 
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("GuessFriendsDetailVC") as GuessFriendsDetailVC
+        vc.picture = GameData.mainData().gameItems[indexPath.row]
+
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+        
     }
 
 

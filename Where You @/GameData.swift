@@ -13,6 +13,7 @@ let _mainData: GameData = GameData()
 
 class GameData: NSObject {
     
+    var score:Int = 0
     
     var myFriends: NSArray = []
     
@@ -35,8 +36,17 @@ class GameData: NSObject {
         
         var feedQuery = PFQuery(className: "Picture")
         
+        if let guessed = PFUser.currentUser()["guessed"] as? [String] {
+            
+            feedQuery.whereKey("objectId", notContainedIn: guessed)
+            
+        }
+        
         feedQuery.includeKey("creator")
-        feedQuery.whereKey("creator", notEqualTo: PFUser.currentUser())
+//        feedQuery.whereKey("creator", notEqualTo: PFUser.currentUser())
+        feedQuery.whereKeyExists("correctVenue")
+        feedQuery.whereKeyExists("selectedVenues")
+        
         
         feedQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             
@@ -44,8 +54,8 @@ class GameData: NSObject {
                 
                 self.gameItems = objects as [PFObject]
                 
-                println("STOP")
-                println(objects)
+//                println("STOP")
+//                println(objects)
                 
             }
             

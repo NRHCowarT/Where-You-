@@ -33,12 +33,10 @@ class CustomLocationViewController: UIViewController {
         
         }else{
         
-        if let customLocation =  customLocationTextField.text {
+        if let customLocation = customLocationTextField.text {
             
-            if let locationName = customLocationTextField.text as String? {
+            if let locationName = ["name" : "\(customLocation)"] as Dictionary? {
                 
-          //  println(locationName)
-         
             GameData.mainData().correctVenue.append(locationName)
                 
            //     println(GameData.mainData().correctVenue)
@@ -46,6 +44,8 @@ class CustomLocationViewController: UIViewController {
                 dismissViewControllerAnimated(true, completion: nil)
 
                 delegate?.reloadTheView()   /////
+                
+//                println(GameData.mainData().correctVenue)
 
                 }
          

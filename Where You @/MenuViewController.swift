@@ -19,9 +19,6 @@ class MenuViewController: UIViewController {
     @IBAction func leaderBoardButton(sender: AnyObject) {
     }
     
-    @IBAction func recentPlacesButton(sender: AnyObject) {
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +28,7 @@ class MenuViewController: UIViewController {
         // check if logged in
         
         // else present LoginVC
-        
+                
     }
     
     override func viewDidAppear(animated: Bool) {

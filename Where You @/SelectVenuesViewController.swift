@@ -11,7 +11,7 @@ import MapKit
 //import CoreLocation
 
 
-var onceToken : dispatch_once_t = 0
+//var onceToken : dispatch_once_t = 0
 
 class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -23,9 +23,16 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     @IBOutlet weak var selectVenuesMapView: MKMapView!
     
+    override func willMoveToParentViewController(parent: UIViewController?) {
+        super.willMoveToParentViewController(parent)
+        
+        GameData.mainData().correctVenue = []
+        GameData.mainData().selectedVenues = []
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
         selectVenuesTableView.delegate = self
         selectVenuesTableView.dataSource = self
@@ -35,15 +42,8 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         selectVenuesMapView.mapType = MKMapType.Standard
         selectVenuesMapView.showsUserLocation = true
 
+// ASK JO  //        self.navigationItem.backBarButtonItem  -> correctLocation.removeAllObjects
         
-//        if currentLocation != nil {
-        
-        
-//        }
-        
-        
-
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -63,46 +63,13 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 //        manager.delegate = nil
     }
     
-    
-//    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
-//        
-////        dispatch_once(&onceToken) { () -> Void in
-//        
-//            println(locations.last)
-//            
-//            if let location = locations.last as? CLLocation {
-//                // array
-//                self.foundVenues = FourSquareRequest.requestVenuesWithLocation(location)
-//                
-//                self.selectVenuesTableView.reloadData()
-//                
-//                zoomToLocation(location)
-//                
-//                // request to foursquare for venues with location
-//            }
-//            
-////        }
-//        
-//        
-//        manager.stopUpdatingLocation()
-//        manager.delegate = nil
-//        
-//    }
-    
     func zoomToLocation(location: CLLocation){
-//        MKCoordinateRegion mapRegion;
-//        mapRegion.center = mapView.userLocation.coordinate;
-//        mapRegion.span.latitudeDelta = 0.2;
-//        mapRegion.span.longitudeDelta = 0.2;
-//        
+       
         var span = MKCoordinateSpanMake(0.01, 0.01)
         var mapRegion = MKCoordinateRegionMake(location.coordinate, span)
         
         mapRegion.center = location.coordinate
         selectVenuesMapView.setRegion(mapRegion, animated: true)
-        
-        
-        
         
     }
     
@@ -120,9 +87,6 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 
         cell.textLabel?.text = venue["name"] as? String
         
-//        cell.venueStatusButton.addTarget(self, action: "selectUsersVenue:", forControlEvents: UIControlEvents.TouchUpInside)
-//        cell.venueStatusButton.tag = indexPath.row
-        
         return cell
     }
     
@@ -134,7 +98,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         
         GameData.mainData().selectedVenues.append(venue)
         
-        //println(GameData.mainData().selectedVenues)
+        println(GameData.mainData().selectedVenues)
         
         if GameData.mainData().selectedVenues.count == 3 {
             
@@ -148,23 +112,19 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
             
           //  println(GameData.mainData().selectedVenues)
             
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MenuVC") as MenuViewController
-//            self.navigationController?.popToViewController(vc, animated: true)
-//            
-//            self.presentViewController(vc, animated: true, completion: nil)
-
             self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-            
-            // move on to next step pfobject of all info.save in background
-            
-//            self.dismissViewControllerAnimated(false, completion: nil)
-
             
         }
         
     }
 
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        GameData.mainData().selectedVenues.removeLast()
+        println(GameData.mainData().selectedVenues)
+    
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
