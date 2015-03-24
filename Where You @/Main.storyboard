@@ -394,12 +394,9 @@
                             </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Vk3-YL-6Iy">
                                 <rect key="frame" x="16" y="57" width="568" height="313"/>
-<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstAttribute="height" constant="313" id="st7-xr-CAz"/>
                                 </constraints>
-=======
->>>>>>> guess-Friends
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HxD-0K-qcS" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
                                 <rect key="frame" x="56" y="330" width="488" height="40"/>
