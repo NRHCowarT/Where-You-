@@ -23,7 +23,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-L2-mRn">
-                                <rect key="frame" x="200" y="195" width="200" height="150"/>
+                                <rect key="frame" x="200" y="145" width="200" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="400" id="NdO-Hw-Z0n"/>
                                     <constraint firstAttribute="width" constant="200" id="QrK-1d-rqQ"/>
@@ -65,7 +65,7 @@
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RHo-xY-Uh6"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="h3f-4W-h9B" secondAttribute="bottom" constant="20" id="Uve-uI-Cdb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VI0-17-Ca3" secondAttribute="trailing" constant="-16" id="Yhk-We-r9C"/>
-                            <constraint firstItem="hs3-L2-mRn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="175" id="bkb-0U-nIV"/>
+                            <constraint firstItem="hs3-L2-mRn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="125" id="bkb-0U-nIV"/>
                             <constraint firstItem="VI0-17-Ca3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="gge-cx-w2Z"/>
                             <constraint firstItem="h3f-4W-h9B" firstAttribute="top" secondItem="hs3-L2-mRn" secondAttribute="bottom" constant="167" id="gpc-yO-8cY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hs3-L2-mRn" secondAttribute="trailing" constant="84" id="j6P-Qp-hZs"/>
@@ -176,6 +176,21 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="DXE-Nv-cCT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-g0-eVq">
+                                <rect key="frame" x="200" y="145" width="200" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="EFg-gc-dlU"/>
+                                    <constraint firstAttribute="width" constant="200" id="tBa-VO-ojt"/>
+                                    <constraint firstAttribute="height" constant="150" id="xAM-NC-usM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yt6-R2-htU"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EFg-gc-dlU"/>
+                                        <exclude reference="yt6-R2-htU"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXW-rh-P43" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
                                 <rect key="frame" x="16" y="480" width="568" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -248,21 +263,14 @@
                                     <action selector="leaderBoardButton:" destination="GMr-s3-5jr" eventType="touchUpInside" id="v00-KU-o7P"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-g0-eVq">
-                                <rect key="frame" x="200" y="195" width="200" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="tBa-VO-ojt"/>
-                                    <constraint firstAttribute="height" constant="150" id="xAM-NC-usM"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="cMt-g0-eVq" firstAttribute="top" secondItem="WrB-Wx-NyQ" secondAttribute="bottom" constant="125" id="38Q-v3-rNk"/>
                             <constraint firstItem="NPb-Qs-jBZ" firstAttribute="top" secondItem="dF1-K1-hwS" secondAttribute="bottom" constant="20" id="7w4-mx-374"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="top" secondItem="yXW-rh-P43" secondAttribute="bottom" constant="20" id="Cmj-qE-Cu7"/>
                             <constraint firstItem="NPb-Qs-jBZ" firstAttribute="top" secondItem="DXE-Nv-cCT" secondAttribute="bottom" id="EB1-cY-9Fd"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="top" secondItem="yXW-rh-P43" secondAttribute="bottom" constant="20" id="OkU-AR-UHR"/>
-                            <constraint firstItem="cMt-g0-eVq" firstAttribute="top" secondItem="WrB-Wx-NyQ" secondAttribute="bottom" constant="175" id="VKa-za-BT9"/>
                             <constraint firstItem="zi6-KL-jU9" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="Y69-5u-3vT"/>
                             <constraint firstItem="yXW-rh-P43" firstAttribute="trailing" secondItem="Wxh-h4-Pcq" secondAttribute="trailingMargin" id="Zsn-rS-Vmq"/>
                             <constraint firstItem="DXE-Nv-cCT" firstAttribute="top" secondItem="Wxh-h4-Pcq" secondAttribute="topMargin" id="a9a-Lt-bAk"/>
