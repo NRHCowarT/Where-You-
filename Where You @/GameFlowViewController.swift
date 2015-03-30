@@ -1,24 +1,31 @@
 //
-//  MapViewVC.swift
+//  GameFlow.swift
 //  Where You @
 //
-//  Created by Nick Cowart on 3/4/15.
+//  Created by Nick Cowart on 3/30/15.
 //  Copyright (c) 2015 Nick Cowart. All rights reserved.
 //
 
 import UIKit
-import MapKit
-import CoreLocation
 
-class PlacesTaggedVC: UIViewController,MKMapViewDelegate{
-  
-   
-    @IBOutlet weak var placesTaggedMapView: MKMapView!
+protocol dismissTheViewDelegate{
+    
+    func dismissViewController()
+}
 
+class GameFlowViewController: UIViewController {
+    
+    var delegate: dismissTheViewDelegate?
+
+    @IBAction func continueButton(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        placesTaggedMapView.delegate = self
+        
+        delegate?.dismissViewController()
         
         // Do any additional setup after loading the view.
     }

@@ -9,12 +9,13 @@
 import UIKit
 
 class TakePictureViewController: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
-    
+
     var imagePicker = UIImagePickerController()
     
     var pictureNumber:Int = 0
     
     @IBOutlet weak var pictureCapturedView: UIImageView!
+   
     @IBOutlet weak var takePictureLabel: UIButton!
     
     @IBAction func menuButton(sender: AnyObject) {
@@ -23,23 +24,21 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
         
     }
     
-    
-    
     @IBAction func takePictureButton(sender: AnyObject) {
         
         presentViewController(imagePicker, animated: true, completion: nil)
         
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pictureCapturedView.clipsToBounds = true
+        
         imagePicker.delegate = self
+        
         imagePicker.sourceType = .Camera
         
-        // Do any additional setup after loading the view.
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
@@ -75,16 +74,11 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
                 
                 let imageData = UIImagePNGRepresentation(image)
                 
-                
-                //      \(PFUser.currentUser().username)\(pictureNumber++)
                 let imageFile = PFFile(name: "image.png", data: imageData)
                 GameData.mainData().newPicture?["image"] = imageFile
                 
-//                GameData.mainData().gameItems.append(newPicture)
                 
                 GameData.mainData().newPicture?.saveInBackground()
-                
-//                println(GameData.mainData().gameItems)
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as SelectCorrectVenueVC
@@ -107,18 +101,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
-    
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }

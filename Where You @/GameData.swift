@@ -13,6 +13,8 @@ let _mainData: GameData = GameData()
 
 class GameData: NSObject {
     
+    var playerScore:Int?
+
     var score:Int = 0
     
     var myFriends: NSArray = []
@@ -24,17 +26,17 @@ class GameData: NSObject {
     
     var gameItems: [PFObject] = []
     
-    // save photo ... creates a pfobject from selectedVenues and correctVenue ... also resets selectedVenues and correctVenue
-    
     class func mainData() -> GameData {
         
         return _mainData
     }
-   
-    //   need to make sure only pulling down item that have all required info
+    
     func refreshGameItems(completion: () -> () ){
         
         var feedQuery = PFQuery(className: "Picture")
+        
+
+
         
         if let guessed = PFUser.currentUser()["guessed"] as? [String] {
             
@@ -43,7 +45,8 @@ class GameData: NSObject {
         }
         
         feedQuery.includeKey("creator")
-//        feedQuery.whereKey("creator", notEqualTo: PFUser.currentUser())
+        feedQuery.whereKey("creator", notEqualTo: PFUser.currentUser())
+        feedQuery.orderByDescending("createdAt")
         feedQuery.whereKeyExists("correctVenue")
         feedQuery.whereKeyExists("selectedVenues")
         
@@ -54,9 +57,6 @@ class GameData: NSObject {
                 
                 self.gameItems = objects as [PFObject]
                 
-//                println("STOP")
-//                println(objects)
-                
             }
             
             completion()
@@ -64,4 +64,5 @@ class GameData: NSObject {
         }
     }
 
+    
 }

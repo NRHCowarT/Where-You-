@@ -9,10 +9,6 @@
 import UIKit
 
 class GuessFriendTableVC: UITableViewController {
-    
-  //  let dateFormatter = NSDateFormatter()
-    
-     
 
     @IBAction func menuButton(sender: AnyObject) {
         
@@ -23,20 +19,12 @@ class GuessFriendTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-        
         GameData.mainData().refreshGameItems { () -> () in
         
             self.tableView.reloadData()
         
         }
         
-//        println(GameData.mainData().gameItems)
-//        println("next")
-//        println(GameData.mainData().myFriends.count)
-        
-        
-
         var friendRequest = FBRequest.requestForMyFriends()
         
         friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
@@ -47,8 +35,6 @@ class GuessFriendTableVC: UITableViewController {
                 let resultInfo = result as NSDictionary
                 
                 GameData.mainData().myFriends = resultInfo["data"] as NSArray
-                
-//                println(GameData.mainData().myFriends)
                 
                 self.tableView.reloadData()
                 
@@ -71,14 +57,12 @@ class GuessFriendTableVC: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
+      
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
+        
         return GameData.mainData().gameItems.count
     }
 
@@ -89,8 +73,6 @@ class GuessFriendTableVC: UITableViewController {
         let picture = GameData.mainData().gameItems[indexPath.row]
         
         let creator = picture["creator"] as PFUser
-        
-//        println(creator)
         
         if let url = NSURL(string: creator["avatar"] as String) {
             
@@ -119,11 +101,11 @@ class GuessFriendTableVC: UITableViewController {
         
         var dateString = dateFormatter.stringFromDate(date)
 
-        let timeFormatter = NSDateFormatter()
-        timeFormatter.timeStyle = .ShortStyle
-        var timeString = timeFormatter.stringFromDate(date)
+//        let timeFormatter = NSDateFormatter()
+//        timeFormatter.timeStyle = .ShortStyle
+//        var timeString = timeFormatter.stringFromDate(date)
       
-        cell.timeAndDatePosted.text = "\(timeString)" + " " + "\(dateString)"
+        cell.timeAndDatePosted.text =  "\(dateString)"
         
         // Configure the cell...
 

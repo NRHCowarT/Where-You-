@@ -10,12 +10,12 @@ import UIKit
 
 protocol reloadPageDelegate {
     
-    func reloadTheView()    ////
+    func reloadTheView()
 }
 
 class CustomLocationViewController: UIViewController {
     
-    var delegate: reloadPageDelegate?   /////
+    var delegate: reloadPageDelegate?
     
     @IBOutlet weak var customLocationTextField: UITextField!
     
@@ -39,14 +39,10 @@ class CustomLocationViewController: UIViewController {
                 
             GameData.mainData().correctVenue.append(locationName)
                 
-           //     println(GameData.mainData().correctVenue)
-                
                 dismissViewControllerAnimated(true, completion: nil)
 
-                delegate?.reloadTheView()   /////
+                delegate?.reloadTheView()
                 
-//                println(GameData.mainData().correctVenue)
-
                 }
          
             }
@@ -57,12 +53,12 @@ class CustomLocationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+
     }
     
 

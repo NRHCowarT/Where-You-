@@ -8,10 +8,6 @@
 
 import UIKit
 import MapKit
-//import CoreLocation
-
-
-//var onceToken : dispatch_once_t = 0
 
 class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKMapViewDelegate, UITableViewDataSource, UITableViewDelegate {
 
@@ -41,19 +37,12 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         selectVenuesMapView.delegate = self
         selectVenuesMapView.mapType = MKMapType.Standard
         selectVenuesMapView.showsUserLocation = true
-
-// ASK JO  //        self.navigationItem.backBarButtonItem  -> correctLocation.removeAllObjects
         
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-//        manager.requestWhenInUseAuthorization()
-//        manager.delegate = self
-//        manager.desiredAccuracy = kCLLocationAccuracyBest
-//        manager.startUpdatingLocation()
-        
-//        println(currentLocation)
+
         zoomToLocation(currentLocation!)
 
     }
@@ -120,14 +109,17 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
-        GameData.mainData().selectedVenues.removeLast()
+        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        var myArray = NSMutableArray(array: GameData.mainData().selectedVenues)
+        myArray.removeObject(venue)
+        GameData.mainData().selectedVenues = myArray
+        
         println(GameData.mainData().selectedVenues)
     
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 

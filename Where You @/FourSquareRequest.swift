@@ -20,7 +20,6 @@ class FourSquareRequest: NSObject {
         
         let requestString = "\(API_URL)venues/search?client_id=\(CLIENT_ID)&client_secret=\(CLIENT_SECRET)&v=20130815&ll=\(location.coordinate.latitude),\(location.coordinate.longitude)"
         
-        //        println(requestString)
         
         if let url = NSURL(string: requestString){
             
@@ -42,9 +41,9 @@ class FourSquareRequest: NSObject {
             
         }
         
-        
         return []
         
     }
+    
     
 }

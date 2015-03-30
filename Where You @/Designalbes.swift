@@ -15,14 +15,17 @@ import UIKit
             layer.cornerRadius = cornerRadius
         }
     }
-    /*
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func drawRect(rect: CGRect) {
-        // Drawing code
-    }
-    */
+    
+}
 
+@IBDesignable class DesignalbleView: UIImageView {
     
-    
+    @IBInspectable var cornerRaduis: CGFloat = 0 {
+        didSet{
+            layer.cornerRadius = cornerRaduis
+        }
+        
+    }
+
+
 }
