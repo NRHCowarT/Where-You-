@@ -64,18 +64,20 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
+        if (NSUserDefaults.standardUserDefaults().valueForKey("eulaAccepted") == nil) {
+            
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("EULAVC") as! EULAViewController
         self.presentViewController(vc, animated: false, completion: nil)
         
         //        self.presentedViewController?.modalPresentationStyle
-        
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+      
     }
     
     override func didReceiveMemoryWarning() {

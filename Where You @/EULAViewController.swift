@@ -15,11 +15,14 @@ class EULAViewController: UIViewController {
     
     @IBAction func acceptTerms(sender: AnyObject) {
         
-        println("accept")
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "eulaAccepted")
+
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     @IBAction func declineTerms(sender: AnyObject) {
         
-        println("decline")
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
