@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -101,7 +100,7 @@
         <!--View Controller-->
         <scene sceneID="ClI-rR-YLy">
             <objects>
-                <viewController storyboardIdentifier="EULAVC" id="mgk-Kg-38o" customClass="EULAViewController" customModule="Where_You__" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EULAVC" modalPresentationStyle="overCurrentContext" id="mgk-Kg-38o" customClass="EULAViewController" customModule="Where_You__" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HQf-Cj-Pvw"/>
                         <viewControllerLayoutGuide type="bottom" id="sNz-Uq-XWd"/>
@@ -116,10 +115,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-gA-GnN">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-gA-GnN">
                                             <rect key="frame" x="25" y="25" width="550" height="500"/>
                                             <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                            <mutableString key="text">Where You @? App End User License Agreement
+                                            <string key="text">Where You @? App End User License Agreement
 This End User License Agreement (“Agreement”) is between you and Where You @? and governs use of this app made available through the Apple App Store. By installing the Where You @? App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Where You @? App.
 In order to ensure Where You @? provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found at the top left corner of each post.
 1. Parties
@@ -139,12 +138,12 @@ Where You @? does provide minimal maintenance or support for it but not to the e
 8. Product Claims
 Where You @?, not Apple, is responsible for addressing any claims by you relating to the Where You @? App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Where You @? App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 9. Third Party Intellectual Property Claims
-Where You @? shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Where You @? App. To the extent Where You @? is required to provide indemnification by applicable law, Where You @?, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Where You @? App or your use of it infringes any third party intellectual property right.</mutableString>
+Where You @? shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Where You @? App. To the extent Where You @? is required to provide indemnification by applicable law, Where You @?, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Where You @? App or your use of it infringes any third party intellectual property right.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                         </textView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aga-H0-9u5" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
-                                            <rect key="frame" x="315" y="540" width="270" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aga-H0-9u5" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
+                                            <rect key="frame" x="310" y="540" width="270" height="40"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Decline Terms">
@@ -160,13 +159,9 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                                 <action selector="declineTerms:" destination="mgk-Kg-38o" eventType="touchUpInside" id="Zfc-WJ-Bny"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-ad-FDj" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
-                                            <rect key="frame" x="15" y="540" width="270" height="40"/>
+                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-ad-FDj" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
+                                            <rect key="frame" x="20" y="540" width="270" height="40"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="270" id="FW3-Ob-Obo"/>
-                                                <constraint firstAttribute="height" constant="40" id="b9y-Oc-Gf8"/>
-                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Accept Terms">
                                                 <color key="titleColor" red="0.086274509799999996" green="0.40784313729999999" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -183,18 +178,17 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="NsD-ad-FDj" secondAttribute="bottom" constant="20" id="Bcc-7G-NJw"/>
-                                        <constraint firstItem="aga-H0-9u5" firstAttribute="width" secondItem="NsD-ad-FDj" secondAttribute="width" id="D1H-cg-RcZ"/>
-                                        <constraint firstItem="aga-H0-9u5" firstAttribute="leading" secondItem="NsD-ad-FDj" secondAttribute="trailing" constant="30" id="D4U-dA-JHu"/>
-                                        <constraint firstItem="NsD-ad-FDj" firstAttribute="leading" secondItem="TqY-TW-fVq" secondAttribute="leading" constant="15" id="EAC-Mz-TUa"/>
-                                        <constraint firstItem="aga-H0-9u5" firstAttribute="top" secondItem="NsD-ad-FDj" secondAttribute="top" id="FUw-Ps-aBb"/>
-                                        <constraint firstItem="B8k-gA-GnN" firstAttribute="centerX" secondItem="TqY-TW-fVq" secondAttribute="centerX" id="MnS-HQ-QRK"/>
-                                        <constraint firstItem="B8k-gA-GnN" firstAttribute="leading" secondItem="TqY-TW-fVq" secondAttribute="leading" constant="25" id="VnI-DO-tWL"/>
-                                        <constraint firstItem="aga-H0-9u5" firstAttribute="baseline" secondItem="NsD-ad-FDj" secondAttribute="firstBaseline" id="ao1-vD-jYR"/>
-                                        <constraint firstAttribute="trailing" secondItem="aga-H0-9u5" secondAttribute="trailing" constant="15" id="ksr-0O-lkp"/>
-                                        <constraint firstItem="NsD-ad-FDj" firstAttribute="top" secondItem="B8k-gA-GnN" secondAttribute="bottom" constant="15" id="owe-EL-vkt"/>
-                                        <constraint firstItem="NsD-ad-FDj" firstAttribute="baseline" secondItem="aga-H0-9u5" secondAttribute="firstBaseline" id="tfe-B4-Rlz"/>
-                                        <constraint firstItem="B8k-gA-GnN" firstAttribute="top" secondItem="TqY-TW-fVq" secondAttribute="top" constant="25" id="uyh-uS-9PD"/>
+                                        <constraint firstItem="NsD-ad-FDj" firstAttribute="top" secondItem="B8k-gA-GnN" secondAttribute="bottom" constant="15" id="7pR-Em-q9d"/>
+                                        <constraint firstAttribute="bottom" secondItem="aga-H0-9u5" secondAttribute="bottom" constant="20" id="BIM-zO-W1N"/>
+                                        <constraint firstAttribute="trailing" secondItem="B8k-gA-GnN" secondAttribute="trailing" constant="25" id="G7s-dM-Ene"/>
+                                        <constraint firstItem="NsD-ad-FDj" firstAttribute="leading" secondItem="TqY-TW-fVq" secondAttribute="leading" constant="20" id="JAx-JN-bzJ"/>
+                                        <constraint firstItem="B8k-gA-GnN" firstAttribute="leading" secondItem="TqY-TW-fVq" secondAttribute="leading" constant="25" id="Ke4-Rn-qwt"/>
+                                        <constraint firstAttribute="bottom" secondItem="NsD-ad-FDj" secondAttribute="bottom" constant="20" id="YSB-Of-gDw"/>
+                                        <constraint firstAttribute="trailing" secondItem="aga-H0-9u5" secondAttribute="trailing" constant="20" id="aaS-16-kem"/>
+                                        <constraint firstItem="aga-H0-9u5" firstAttribute="width" secondItem="NsD-ad-FDj" secondAttribute="width" id="c3y-ef-JBe"/>
+                                        <constraint firstItem="aga-H0-9u5" firstAttribute="leading" secondItem="NsD-ad-FDj" secondAttribute="trailing" constant="20" id="ci1-3X-91m"/>
+                                        <constraint firstItem="B8k-gA-GnN" firstAttribute="top" secondItem="TqY-TW-fVq" secondAttribute="top" constant="25" id="dOH-mF-bs6"/>
+                                        <constraint firstItem="aga-H0-9u5" firstAttribute="top" secondItem="B8k-gA-GnN" secondAttribute="bottom" constant="15" id="uF1-wn-Hs8"/>
                                     </constraints>
                                 </view>
                                 <blurEffect style="light"/>

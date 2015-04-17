@@ -68,7 +68,7 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
             
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("EULAVC") as! EULAViewController
-        self.presentViewController(vc, animated: false, completion: nil)
+        self.presentViewController(vc, animated: true, completion: nil)
         
         //        self.presentedViewController?.modalPresentationStyle
         }

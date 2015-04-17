@@ -17,11 +17,19 @@ class EULAViewController: UIViewController {
         
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "eulaAccepted")
 
-        self.dismissViewControllerAnimated(true, completion: nil)
     }
+    
     @IBAction func declineTerms(sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        let alert = UIAlertController(title: "You Must Agree to the Terms to Use The App!", message: "You're Gonna Miss Out!",preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let defaultAction = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) -> Void in
+            
+        })
+        
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
         
     }
     override func viewDidLoad() {
@@ -39,21 +47,12 @@ class EULAViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
     
         blurEffect.alpha = 1.0
+        
         //updateBlur()
     
     }
 
-//    func updateBlur() {
-//        
-//        blurEffect.alpha = 1.0
-//        
-//        UIView.animateWithDuration(12, animations: { () -> Void in
-//            
-//            self.blurEffect.alpha = 1.0
-//            
-//        })
-//a
-//    }
+
     
     /*
     // MARK: - Navigation

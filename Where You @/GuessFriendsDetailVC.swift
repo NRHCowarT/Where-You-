@@ -90,14 +90,11 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
             let alert = UIAlertController(title: "Nice Guess. You're Right!!!", message: "You Just Earned \(playerScore) Points!!!", preferredStyle: UIAlertControllerStyle.Alert)
             
 
-            
             let defaultAction = UIAlertAction(title: "Dismiss", style: .Default, handler: { (action) -> Void in
                 
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
                 println("boom")
                 
-                
-
             })
             
             playerScore += PFUser.currentUser()["playerScore"] as! Int
