@@ -55,7 +55,7 @@ class GameData: NSObject {
             
             if objects.count > 0 {
                 
-                self.gameItems = objects as [PFObject]
+                self.gameItems = objects as! [PFObject]
                 
             }
             

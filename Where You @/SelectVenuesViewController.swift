@@ -70,9 +70,9 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        let venue = foundVenues[indexPath.row] as! [String:AnyObject]
 
         cell.textLabel?.text = venue["name"] as? String
         
@@ -81,7 +81,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
-        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        let venue = foundVenues[indexPath.row] as! [String:AnyObject]
         
 //        println(venue["name"])
         
@@ -109,10 +109,10 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
 
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        let venue = foundVenues[indexPath.row] as! [String:AnyObject]
         var myArray = NSMutableArray(array: GameData.mainData().selectedVenues)
         myArray.removeObject(venue)
-        GameData.mainData().selectedVenues = myArray
+        GameData.mainData().selectedVenues = myArray as [AnyObject]
         
         println(GameData.mainData().selectedVenues)
     

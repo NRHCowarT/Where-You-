@@ -48,9 +48,8 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
         if PFUser.currentUser() == nil {
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as LoginViewController
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
             self.presentViewController(vc, animated: true, completion: nil)
-            //            self.presentViewController(vc, animated: true, completion: nil)
             
         } else {
             

@@ -24,7 +24,7 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
         
         var permissions = ["public_profile", "user_friends"]
         
-        PFFacebookUtils.logInWithPermissions(permissions, {
+        PFFacebookUtils.logInWithPermissions(permissions, block: {
             (user: PFUser!, error: NSError!) -> Void in
             if let user = user {
                 
@@ -33,14 +33,14 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
                     
                     if error == nil {
                         
-                        let userData = result as NSDictionary
+                        let userData = result as! NSDictionary
                         
                         println(userData)
                         
-                        let facebookID = userData["id"] as String
-                        let name = userData["name"] as String
+                        let facebookID = userData["id"] as! String
+                        let name = userData["name"] as! String
                         
-                        user["name"] = userData["name"] as String
+                        user["name"] = userData["name"] as! String
                         user["avatar"] = "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
                         
                         user.saveInBackground()
@@ -50,7 +50,7 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
                 }
                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("GameFlow") as GameFlowViewController
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("GameFlow") as! GameFlowViewController
                 vc.delegate = self
                 self.presentViewController(vc, animated: true, completion: nil)
 
@@ -60,6 +60,17 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
         
     }
     
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("EULAVC") as! EULAViewController
+        self.presentViewController(vc, animated: false, completion: nil)
+        
+        //        self.presentedViewController?.modalPresentationStyle
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

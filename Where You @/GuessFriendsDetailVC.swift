@@ -38,7 +38,6 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
     
     var shuffleVenues: [AnyObject] = []
     
-    // ask jo why in sit fit we used did set method to convert PFFile to UIImage
     
     @IBOutlet weak var venue1: DesignalbeButton!
     
@@ -54,12 +53,18 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
     
     @IBOutlet weak var blurView: UIVisualEffectView!
     
+    @IBAction func flagContent(sender: AnyObject) {
+        
+        picture?["flagged"] = true
+        picture?.saveInBackground()
+    }
+    
     @IBAction func guessSelectionButton(sender: UIButton) {
         
         endDate = NSDate()
         
-        let correctLocation = picture?["correctVenue"].firstObject as NSDictionary
-        let correctName = correctLocation["name"] as String
+        let correctLocation = picture?["correctVenue"].firstObject as! NSDictionary
+        let correctName = correctLocation["name"] as! String
         if correctName == sender.titleLabel?.text {
             
             var guessTime = endDate?.timeIntervalSinceDate(startDate!)
@@ -95,7 +100,7 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
 
             })
             
-            playerScore += PFUser.currentUser()["playerScore"] as Int
+            playerScore += PFUser.currentUser()["playerScore"] as! Int
             PFUser.currentUser()["playerScore"] = playerScore
             PFUser.currentUser().saveInBackground()
             
@@ -155,7 +160,7 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
         guessFriendsPicture.clipsToBounds = true
         blurView.clipsToBounds = true
         
-        let friendsPicture = picture?["image"] as PFFile
+        let friendsPicture = picture?["image"] as! PFFile
         
         friendsPicture.getDataInBackgroundWithBlock {
             
@@ -171,17 +176,17 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
             
         }
         
-        var venues = picture?["selectedVenues"] as NSArray
+        var venues = picture?["selectedVenues"] as! NSArray
        
         for venue in  venues {
             
-            shuffleVenues.append(venue["name"]as String)
+            shuffleVenues.append(venue["name"]as! String)
             
         }
         
-        var correctLocation = picture?["correctVenue"].firstObject as NSDictionary
+        var correctLocation = picture?["correctVenue"].firstObject as! NSDictionary
         
-        shuffleVenues.append(correctLocation["name"] as String)
+        shuffleVenues.append(correctLocation["name"] as! String)
         
         println(shuffleVenues)
         

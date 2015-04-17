@@ -43,7 +43,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]) {
         
-        var image = info[UIImagePickerControllerOriginalImage] as UIImage
+        var image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         self.pictureCapturedView.image = image
         
@@ -81,7 +81,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
                 GameData.mainData().newPicture?.saveInBackground()
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as SelectCorrectVenueVC
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectCorrectVenueVC") as! SelectCorrectVenueVC
                 self.navigationController?.pushViewController(vc, animated: true)
                 
             }

@@ -29,9 +29,9 @@ class FourSquareRequest: NSObject {
                 
                 if let returnInfo = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: nil) as? [String:AnyObject]{
                     
-                    let responseInfo = returnInfo["response"] as [String:AnyObject]
+                    let responseInfo = returnInfo["response"] as! [String:AnyObject]
                     
-                    let venues = responseInfo["venues"] as [AnyObject]
+                    let venues = responseInfo["venues"] as! [AnyObject]
                     
                     return venues
                     

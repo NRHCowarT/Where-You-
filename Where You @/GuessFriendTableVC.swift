@@ -32,9 +32,9 @@ class GuessFriendTableVC: UITableViewController {
             if error == nil {
                 
                 
-                let resultInfo = result as NSDictionary
+                let resultInfo = result as! NSDictionary
                 
-                GameData.mainData().myFriends = resultInfo["data"] as NSArray
+                GameData.mainData().myFriends = resultInfo["data"] as! NSArray
                 
                 self.tableView.reloadData()
                 
@@ -68,13 +68,13 @@ class GuessFriendTableVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("guessFriendCell", forIndexPath: indexPath) as GuessFriendsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("guessFriendCell", forIndexPath: indexPath) as! GuessFriendsTableViewCell
 
         let picture = GameData.mainData().gameItems[indexPath.row]
         
-        let creator = picture["creator"] as PFUser
+        let creator = picture["creator"] as! PFUser
         
-        if let url = NSURL(string: creator["avatar"] as String) {
+        if let url = NSURL(string: creator["avatar"] as! String) {
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
                 
@@ -115,7 +115,7 @@ class GuessFriendTableVC: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("GuessFriendsDetailVC") as GuessFriendsDetailVC
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("GuessFriendsDetailVC") as! GuessFriendsDetailVC
         vc.picture = GameData.mainData().gameItems[indexPath.row]
 
         self.navigationController?.pushViewController(vc, animated: true)

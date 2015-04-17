@@ -29,7 +29,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
             GameData.mainData().newPicture?["correctVenue"] = GameData.mainData().correctVenue
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectVenuesVC") as SelectVenuesViewController
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectVenuesVC") as! SelectVenuesViewController
             
             vc.foundVenues = foundVenues
             vc.currentLocation = currentLocation
@@ -110,9 +110,9 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("venueCell", forIndexPath: indexPath) as! UITableViewCell
         
-        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        let venue = foundVenues[indexPath.row] as! [String:AnyObject]
         
         cell.textLabel?.text = venue["name"] as? String
         
@@ -121,7 +121,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let venue = foundVenues[indexPath.row] as [String:AnyObject]
+        let venue = foundVenues[indexPath.row] as! [String:AnyObject]
         
         GameData.mainData().correctVenue.append(venue)
         
@@ -135,7 +135,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
 
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectVenuesVC") as SelectVenuesViewController
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("SelectVenuesVC") as! SelectVenuesViewController
             
             vc.currentLocation = currentLocation
             vc.foundVenues = foundVenues
@@ -151,7 +151,7 @@ class SelectCorrectVenueVC: UIViewController,CLLocationManagerDelegate,MKMapView
     @IBAction func addCustomLocationButton(sender: AnyObject) {
     
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("CustomLocationVC") as CustomLocationViewController
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("CustomLocationVC") as! CustomLocationViewController
         vc.delegate = self
         self.presentViewController(vc, animated: true, completion: nil)
 
