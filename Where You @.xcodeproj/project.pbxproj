@@ -15,7 +15,7 @@
 		980CA05B1AA8035E00AD5149 /* GuessFriendTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05A1AA8035E00AD5149 /* GuessFriendTableVC.swift */; };
 		980CA05D1AA8053E00AD5149 /* GuessFriendsDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */; };
 		9823EB731AB33B1E0058D09C /* SelectCorrectVenueVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */; };
-		982662131AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982662121AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift */; };
+		982662131AB9CC7200BBDA50 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982662121AB9CC7200BBDA50 /* CustomTableViewCell.swift */; };
 		98315BE81AE004F40006DBF7 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98315BE71AE004F40006DBF7 /* EULAViewController.swift */; };
 		983B3DCE1AB8A51000BBDF40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 983B3DCD1AB8A51000BBDF40 /* Main.storyboard */; };
 		984D27091AA3B9AE0026C700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984D27081AA3B9AE0026C700 /* Images.xcassets */; };
@@ -37,7 +37,9 @@
 		984D273E1AA3BD250026C700 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273D1AA3BD250026C700 /* libz.dylib */; };
 		984D27401AA3BD3A0026C700 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273F1AA3BD3A0026C700 /* libsqlite3.dylib */; };
 		984D274B1AA3DD680026C700 /* Designalbes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D274A1AA3DD680026C700 /* Designalbes.swift */; };
-		987C565E1AE0544F000A705D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
+		987C565F1AE191AE000A705D /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
+		987C56611AE1A185000A705D /* InviteFriendsTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C56601AE1A185000A705D /* InviteFriendsTableVC.swift */; };
+		987C56631AE1A1A8000A705D /* BlockUsersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C56621AE1A1A8000A705D /* BlockUsersTableVC.swift */; };
 		9895EEBD1AC9C3F400FD229F /* GameFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895EEBC1AC9C3F400FD229F /* GameFlowViewController.swift */; };
 		98B95C321AB4EACC003035DE /* CustomLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98B95C311AB4EACC003035DE /* CustomLocationViewController.swift */; };
 		98C366D11AC1C35000E41955 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98C366D01AC1C35000E41955 /* GameKit.framework */; };
@@ -65,7 +67,7 @@
 		980CA05A1AA8035E00AD5149 /* GuessFriendTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessFriendTableVC.swift; sourceTree = "<group>"; };
 		980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuessFriendsDetailVC.swift; sourceTree = "<group>"; };
 		9823EB721AB33B1E0058D09C /* SelectCorrectVenueVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCorrectVenueVC.swift; sourceTree = "<group>"; };
-		982662121AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GuessFriendsTableViewCell.swift; path = "Where You @/GuessFriendsTableViewCell.swift"; sourceTree = "<group>"; };
+		982662121AB9CC7200BBDA50 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = "Where You @/CustomTableViewCell.swift"; sourceTree = "<group>"; };
 		98315BE71AE004F40006DBF7 /* EULAViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EULAViewController.swift; sourceTree = "<group>"; };
 		983B3DCD1AB8A51000BBDF40 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		984D26FC1AA3B9AE0026C700 /* Where You @.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Where You @.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,8 @@
 		984D273F1AA3BD3A0026C700 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		984D27471AA3CBE20026C700 /* Where You @-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Where You @-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		984D274A1AA3DD680026C700 /* Designalbes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Designalbes.swift; path = "Where You @/Designalbes.swift"; sourceTree = "<group>"; };
+		987C56601AE1A185000A705D /* InviteFriendsTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InviteFriendsTableVC.swift; sourceTree = "<group>"; };
+		987C56621AE1A1A8000A705D /* BlockUsersTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockUsersTableVC.swift; sourceTree = "<group>"; };
 		9895EEBC1AC9C3F400FD229F /* GameFlowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameFlowViewController.swift; sourceTree = "<group>"; };
 		98B95C311AB4EACC003035DE /* CustomLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomLocationViewController.swift; path = ../CustomLocationViewController.swift; sourceTree = "<group>"; };
 		98C366D01AC1C35000E41955 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
@@ -111,7 +115,7 @@
 				984D273E1AA3BD250026C700 /* libz.dylib in Frameworks */,
 				984D273C1AA3BD120026C700 /* SystemConfiguration.framework in Frameworks */,
 				984D27381AA3BCEE0026C700 /* Security.framework in Frameworks */,
-				987C565E1AE0544F000A705D /* FacebookSDK.framework in Frameworks */,
+				987C565F1AE191AE000A705D /* FacebookSDK.framework in Frameworks */,
 				984D27361AA3BCE10026C700 /* QuartzCore.framework in Frameworks */,
 				984D27341AA3BCD40026C700 /* MobileCoreServices.framework in Frameworks */,
 				984D27321AA3BCBD0026C700 /* CoreLocation.framework in Frameworks */,
@@ -142,7 +146,7 @@
 			children = (
 				980CA04A1AA7EB8600AD5149 /* FourSquareRequest.swift */,
 				984D274A1AA3DD680026C700 /* Designalbes.swift */,
-				982662121AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift */,
+				982662121AB9CC7200BBDA50 /* CustomTableViewCell.swift */,
 				98F55C8F1AB5468800105576 /* GameData.swift */,
 			);
 			name = Models;
@@ -175,6 +179,8 @@
 				980CA0501AA7F72B00AD5149 /* LoginViewController.swift */,
 				9895EEBC1AC9C3F400FD229F /* GameFlowViewController.swift */,
 				980CA0521AA7FBC400AD5149 /* MenuViewController.swift */,
+				987C56601AE1A185000A705D /* InviteFriendsTableVC.swift */,
+				987C56621AE1A1A8000A705D /* BlockUsersTableVC.swift */,
 				983B3DCD1AB8A51000BBDF40 /* Main.storyboard */,
 				980CA05A1AA8035E00AD5149 /* GuessFriendTableVC.swift */,
 				980CA05C1AA8053E00AD5149 /* GuessFriendsDetailVC.swift */,
@@ -351,11 +357,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				987C56611AE1A185000A705D /* InviteFriendsTableVC.swift in Sources */,
 				98315BE81AE004F40006DBF7 /* EULAViewController.swift in Sources */,
 				98E678651AA8F9F000CB2AF8 /* AppDelegate.swift in Sources */,
 				980CA0511AA7F72B00AD5149 /* LoginViewController.swift in Sources */,
 				980CA04B1AA7EB8600AD5149 /* FourSquareRequest.swift in Sources */,
 				980CA0571AA7FFA900AD5149 /* TakePictureViewController.swift in Sources */,
+				987C56631AE1A1A8000A705D /* BlockUsersTableVC.swift in Sources */,
 				980CA05B1AA8035E00AD5149 /* GuessFriendTableVC.swift in Sources */,
 				984D274B1AA3DD680026C700 /* Designalbes.swift in Sources */,
 				980CA0531AA7FBC400AD5149 /* MenuViewController.swift in Sources */,
@@ -365,7 +373,7 @@
 				98B95C321AB4EACC003035DE /* CustomLocationViewController.swift in Sources */,
 				98F55C901AB5468800105576 /* GameData.swift in Sources */,
 				980CA0591AA8018200AD5149 /* SelectVenuesViewController.swift in Sources */,
-				982662131AB9CC7200BBDA50 /* GuessFriendsTableViewCell.swift in Sources */,
+				982662131AB9CC7200BBDA50 /* CustomTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +545,9 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -557,6 +568,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",

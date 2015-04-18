@@ -42,8 +42,29 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
                         
                         user["name"] = userData["name"] as! String
                         user["avatar"] = "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
+                        user["facebookId"] = facebookID
                         
-                        user.saveInBackground()
+                        var friendRequest = FBRequest.requestForMyFriends()
+                        
+                        friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+                            
+                            if error == nil {
+                                
+                                
+                                let resultInfo = result as! NSDictionary
+                                
+                                GameData.mainData().myFriends = resultInfo["data"] as! NSArray
+                                
+                                let friendsId = GameData.mainData().myFriends.valueForKey("id") as? NSArray
+                                                                                                
+                                user["friendsId"] = friendsId
+                                
+                                user.saveInBackground()
+
+                            }
+                            
+                        }
+                        
                         
                     }
                     

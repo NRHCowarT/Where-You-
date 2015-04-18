@@ -39,6 +39,8 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println(GameData.mainData().myFriends)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -58,6 +60,28 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
                 if viewController != nil { self.presentViewController(viewController, animated: true, completion: nil) }
                 
                 println("authentication done = \(GKLocalPlayer.localPlayer().authenticated)")
+                
+            }
+            
+            
+            var friendRequest = FBRequest.requestForMyFriends()
+            
+            friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+                
+                if error == nil {
+                    
+                    
+                    let resultInfo = result as! NSDictionary
+                    
+                    GameData.mainData().myFriends = resultInfo["data"] as! NSArray
+                    
+                    let friendsId = GameData.mainData().myFriends.valueForKey("id") as? NSArray
+                    
+                    PFUser.currentUser()["friendsId"] = friendsId
+                    
+                    PFUser.currentUser().saveInBackground()
+                    
+                }
                 
             }
             

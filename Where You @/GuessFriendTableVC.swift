@@ -36,12 +36,14 @@ class GuessFriendTableVC: UITableViewController {
                 
                 GameData.mainData().myFriends = resultInfo["data"] as! NSArray
                 
+                println(GameData.mainData().myFriends)
+                
                 self.tableView.reloadData()
                 
             }
             
         }
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -68,7 +70,7 @@ class GuessFriendTableVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("guessFriendCell", forIndexPath: indexPath) as! GuessFriendsTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("customFriendCell", forIndexPath: indexPath) as!CustomTableViewCell
 
         let picture = GameData.mainData().gameItems[indexPath.row]
         

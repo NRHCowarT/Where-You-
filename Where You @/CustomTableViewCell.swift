@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuessFriendsTableViewCell: UITableViewCell {
+class CustomTableViewCell: UITableViewCell {
 
     @IBOutlet weak var fBProfilePic: UIImageView!
     

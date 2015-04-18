@@ -35,9 +35,12 @@ class GameData: NSObject {
         
         var feedQuery = PFQuery(className: "Picture")
         
+        if let friends = PFUser.currentUser()["friendsId"] as? [String] {
+            
+            feedQuery.whereKey("facebookId", containedIn: friends)
+            
+        }
 
-
-        
         if let guessed = PFUser.currentUser()["guessed"] as? [String] {
             
             feedQuery.whereKey("objectId", notContainedIn: guessed)
@@ -49,7 +52,6 @@ class GameData: NSObject {
         feedQuery.orderByDescending("createdAt")
         feedQuery.whereKeyExists("correctVenue")
         feedQuery.whereKeyExists("selectedVenues")
-        
         
         feedQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
             

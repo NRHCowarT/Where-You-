@@ -16,6 +16,8 @@ class EULAViewController: UIViewController {
     @IBAction func acceptTerms(sender: AnyObject) {
         
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "eulaAccepted")
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
 
     }
     

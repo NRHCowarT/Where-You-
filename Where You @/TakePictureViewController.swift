@@ -67,6 +67,7 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
         
         GameData.mainData().newPicture = PFObject(className: "Picture")
         GameData.mainData().newPicture?["creator"] = PFUser.currentUser()
+        GameData.mainData().newPicture?["facebookId"] = PFUser.currentUser()["facebookId"]
         
         if let originalImage = pictureCapturedView.image {
             
