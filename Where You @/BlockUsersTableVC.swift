@@ -13,6 +13,10 @@ class BlockUsersTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.navigationItem.hidesBackButton = false
+        
+        println(GameData.mainData().gameItems)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -30,24 +34,29 @@ class BlockUsersTableVC: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return GameData.mainData().myFriends.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("customFriendCell", forIndexPath: indexPath) as! CustomTableViewCell
 
-        // Configure the cell...
-
+//        cell.friendsName.text =
+        
+        
+        
+        
+//        "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

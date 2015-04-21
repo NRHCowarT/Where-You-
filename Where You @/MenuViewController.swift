@@ -75,6 +75,8 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
                     
                     GameData.mainData().myFriends = resultInfo["data"] as! NSArray
                     
+                    println(GameData.mainData().myFriends)
+                    
                     let friendsId = GameData.mainData().myFriends.valueForKey("id") as? NSArray
                     
                     PFUser.currentUser()["friendsId"] = friendsId

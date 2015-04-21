@@ -54,7 +54,7 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
                                 let resultInfo = result as! NSDictionary
                                 
                                 GameData.mainData().myFriends = resultInfo["data"] as! NSArray
-                                
+                                                                
                                 let friendsId = GameData.mainData().myFriends.valueForKey("id") as? NSArray
                                                                                                 
                                 user["friendsId"] = friendsId

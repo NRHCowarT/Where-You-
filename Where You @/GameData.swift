@@ -24,6 +24,8 @@ class GameData: NSObject {
 
     var newPicture: PFObject?
     
+//    var gameUsers: [PFObject] = []
+    
     var gameItems: [PFObject] = []
     
     class func mainData() -> GameData {
@@ -66,5 +68,7 @@ class GameData: NSObject {
         }
     }
 
-    
+//    func refreshUsers(completion: () -> () ){
+//        
+//    }
 }

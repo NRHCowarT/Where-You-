@@ -35,9 +35,7 @@ class GuessFriendTableVC: UITableViewController {
                 let resultInfo = result as! NSDictionary
                 
                 GameData.mainData().myFriends = resultInfo["data"] as! NSArray
-                
-                println(GameData.mainData().myFriends)
-                
+                                
                 self.tableView.reloadData()
                 
             }

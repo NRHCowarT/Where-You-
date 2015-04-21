@@ -16,6 +16,8 @@ class CustomTableViewCell: UITableViewCell {
    
     @IBOutlet weak var timeAndDatePosted: UILabel!
     
+    @IBAction func blockUserSwitch(sender: AnyObject) {
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
                         
