@@ -16,11 +16,17 @@ class CustomTableViewCell: UITableViewCell {
    
     @IBOutlet weak var timeAndDatePosted: UILabel!
     
+    @IBOutlet weak var blockUser: UISwitch!
+    
     @IBAction func blockUserSwitch(sender: AnyObject) {
+        
+        println("blocked")
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-                        
+        
+
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

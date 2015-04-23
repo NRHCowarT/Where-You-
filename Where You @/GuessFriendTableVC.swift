@@ -19,6 +19,8 @@ class GuessFriendTableVC: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        println(GameData.mainData().gameItems)
+        
         GameData.mainData().refreshGameItems { () -> () in
         
             self.tableView.reloadData()

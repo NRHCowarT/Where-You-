@@ -39,11 +39,10 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println(GameData.mainData().myFriends)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
         
         println(PFUser.currentUser())
         

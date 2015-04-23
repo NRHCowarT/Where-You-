@@ -10,12 +10,23 @@ import UIKit
 
 class BlockUsersTableVC: UITableViewController {
 
+    @IBAction func menuButton(sender: AnyObject) {
+        
+        self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.hidesBackButton = false
         
-        println(GameData.mainData().gameItems)
+        
+        
+//        GameData.mainData().refreshGameUsers { () -> () in
+//            
+//            self.tableView.reloadData()
+//            
+//        }
+
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,14 +56,33 @@ class BlockUsersTableVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("customFriendCell", forIndexPath: indexPath) as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("blockFriendCell", forIndexPath: indexPath) as! CustomTableViewCell
 
-//        cell.friendsName.text =
+        let friend: AnyObject = GameData.mainData().myFriends[indexPath.row]
         
+        let id = friend["id"] as! String
         
+        cell.friendsName.text = friend["name"] as? String
         
+        if let url = NSURL(string: "https://graph.facebook.com/\(id)/picture?type=large&return_ssl_resources=1" as String) {
+            
+            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
+                
+                if let data = NSData(contentsOfURL: url) {
+                    
+                    dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                        
+                        cell.fBProfilePic.image = UIImage(data: data)
+                        
+                    })
+                    
+                }
+                
+            })
+            
+            
+        }
         
-//        "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
         
         return cell
     }

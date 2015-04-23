@@ -24,7 +24,7 @@ class GameData: NSObject {
 
     var newPicture: PFObject?
     
-//    var gameUsers: [PFObject] = []
+    var gameUsers: [PFObject] = []
     
     var gameItems: [PFObject] = []
     
@@ -68,7 +68,24 @@ class GameData: NSObject {
         }
     }
 
-//    func refreshUsers(completion: () -> () ){
+//    func refreshGameUsers(completion: () -> () ){
+//        
+//        var feedQuery = PFQuery(className: "User")
+//        
+//        feedQuery.whereKey("objectId", notEqualTo: PFUser.currentUser())
+//        feedQuery.includeKey("name")
+//        
+//        feedQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
+//            
+//            if objects.count > 0 {
+//                
+//                self.gameUsers = objects as! [PFObject]
+//            }
+//            
+//            completion()
+//            
+//        }
 //        
 //    }
+    
 }

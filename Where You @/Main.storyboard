@@ -115,33 +115,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-gA-GnN">
-                                            <rect key="frame" x="25" y="25" width="550" height="500"/>
-                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                            <string key="text">Where You @? App End User License Agreement
-This End User License Agreement (“Agreement”) is between you and Where You @? and governs use of this app made available through the Apple App Store. By installing the Where You @? App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Where You @? App.
-In order to ensure Where You @? provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found at the top left corner of each post.
-1. Parties
-This Agreement is between you and Where You @? only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Where You @?, not Apple, is solely responsible for the Where You @? App and its content.
-2. Privacy
-Where You @? may collect and use information about your usage of the Where You @? App, including certain types of information from and about your device. Where You @? may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Where You @? App.
-3. Limited License
-Where You @? grants you a limited, non-exclusive, non-transferable, revocable license to use the Where You @? App for your personal, non-commercial purposes. You may only use the Where You @? App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
-4. Age Restrictions
-By using the Where You @? App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Where You @? App does not violate any applicable law or regulation. Your access to the Where You @? App may be terminated without warning if Where You @? believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. If you are a parent or legal guardian and you provide your consent to your child’s use of the Where You @? App, you agree to be bound by this Agreement in respect to your child’s use of the Where You @? App.
-5. Objectionable Content Policy
-Content may not be submitted to Where You @?, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
-6. Warranty
-Where You @? disclaims all warranties about the Where You @? App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Where You @?, not Apple, shall be solely responsible for such warranty.
-7. Maintenance and Support
-Where You @? does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Where You @?, not Apple, shall be obligated to furnish any such maintenance or support.
-8. Product Claims
-Where You @?, not Apple, is responsible for addressing any claims by you relating to the Where You @? App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Where You @? App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
-9. Third Party Intellectual Property Claims
-Where You @? shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Where You @? App. To the extent Where You @? is required to provide indemnification by applicable law, Where You @?, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Where You @? App or your use of it infringes any third party intellectual property right.</string>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
-                                        </textView>
                                         <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aga-H0-9u5" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
                                             <rect key="frame" x="310" y="540" width="270" height="40"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -176,6 +149,33 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                                 <action selector="acceptTerms:" destination="mgk-Kg-38o" eventType="touchUpInside" id="yWj-22-y5b"/>
                                             </connections>
                                         </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-gA-GnN">
+                                            <rect key="frame" x="25" y="25" width="550" height="500"/>
+                                            <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                            <string key="text">Where You @? App End User License Agreement
+This End User License Agreement (“Agreement”) is between you and Where You @? and governs use of this app made available through the Apple App Store. By installing the Where You @? App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Where You @? App.
+In order to ensure Where You @? provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found at the top left corner of each post.
+1. Parties
+This Agreement is between you and Where You @? only, and not Apple, Inc. (“Apple”). Notwithstanding the foregoing, you acknowledge that Apple and its subsidiaries are third party beneficiaries of this Agreement and Apple has the right to enforce this Agreement against you. Where You @?, not Apple, is solely responsible for the Where You @? App and its content.
+2. Privacy
+Where You @? may collect and use information about your usage of the Where You @? App, including certain types of information from and about your device. Where You @? may use this information, as long as it is in a form that does not personally identify you, to measure the use and performance of the Where You @? App.
+3. Limited License
+Where You @? grants you a limited, non-exclusive, non-transferable, revocable license to use the Where You @? App for your personal, non-commercial purposes. You may only use the Where You @? App on Apple devices that you own or control and as permitted by the App Store Terms of Service.
+4. Age Restrictions
+By using the Where You @? App, you represent and warrant that (a) you are 17 years of age or older and you agree to be bound by this Agreement; (b) if you are under 17 years of age, you have obtained verifiable consent from a parent or legal guardian; and (c) your use of the Where You @? App does not violate any applicable law or regulation. Your access to the Where You @? App may be terminated without warning if Where You @? believes, in its sole discretion, that you are under the age of 17 years and have not obtained verifiable consent from a parent or legal guardian. If you are a parent or legal guardian and you provide your consent to your child’s use of the Where You @? App, you agree to be bound by this Agreement in respect to your child’s use of the Where You @? App.
+5. Objectionable Content Policy
+Content may not be submitted to Where You @?, who will moderate all content and ultimately decide whether or not to post a submission to the extent such content includes, is in conjunction with, or alongside any, Objectionable Content. Objectionable Content includes, but is not limited to: (i) sexually explicit materials; (ii) obscene, defamatory, libelous, slanderous, violent and/or unlawful content or profanity; (iii) content that infringes upon the rights of any third party, including copyright, trademark, privacy, publicity or other personal or proprietary right, or that is deceptive or fraudulent; (iv) content that promotes the use or sale of illegal or regulated substances, tobacco products, ammunition and/or firearms; and (v) gambling, including without limitation, any online casino, sports books, bingo or poker.
+6. Warranty
+Where You @? disclaims all warranties about the Where You @? App to the fullest extent permitted by law. To the extent any warranty exists under law that cannot be disclaimed, Where You @?, not Apple, shall be solely responsible for such warranty.
+7. Maintenance and Support
+Where You @? does provide minimal maintenance or support for it but not to the extent that any maintenance or support is required by applicable law, Where You @?, not Apple, shall be obligated to furnish any such maintenance or support.
+8. Product Claims
+Where You @?, not Apple, is responsible for addressing any claims by you relating to the Where You @? App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Where You @? App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
+9. Third Party Intellectual Property Claims
+Where You @? shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Where You @? App. To the extent Where You @? is required to provide indemnification by applicable law, Where You @?, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Where You @? App or your use of it infringes any third party intellectual property right.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                        </textView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="NsD-ad-FDj" firstAttribute="top" secondItem="B8k-gA-GnN" secondAttribute="bottom" constant="15" id="7pR-Em-q9d"/>
@@ -375,7 +375,7 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="leaderBoardButton:" destination="GMr-s3-5jr" eventType="touchUpInside" id="v00-KU-o7P"/>
+                                    <action selector="leaderBoardButton:" destination="GMr-s3-5jr" eventType="touchUpInside" id="Qlz-L7-hHQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4u-VH-tAH" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
@@ -1248,12 +1248,12 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
         <scene sceneID="Fd5-ms-FK0">
             <objects>
                 <tableViewController id="56Q-M3-ppB" customClass="BlockUsersTableVC" customModule="Where_You__" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fDi-7G-geh">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="fDi-7G-geh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="customFriendCell" rowHeight="70" id="kz3-dJ-TBX" customClass="CustomTableViewCell" customModule="Where_You__" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="blockFriendCell" rowHeight="70" id="kz3-dJ-TBX" customClass="CustomTableViewCell" customModule="Where_You__" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kz3-dJ-TBX" id="fdu-IY-9Nl">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -1272,7 +1272,7 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="HhV-hU-oBw">
                                             <rect key="frame" x="543" y="19" width="51" height="31"/>
-                                            <color key="onTintColor" red="1" green="0.12637648552499592" blue="0.17217584882952863" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="onTintColor" red="1" green="0.1263764855" blue="0.1721758488" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
                                                 <action selector="blockUserSwitch:" destination="kz3-dJ-TBX" eventType="valueChanged" id="nug-nJ-Flo"/>
                                             </connections>
@@ -1292,6 +1292,7 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="blockUser" destination="HhV-hU-oBw" id="Tti-0Q-Acp"/>
                                     <outlet property="fBProfilePic" destination="qIT-y7-TJX" id="7e3-Sm-c8H"/>
                                     <outlet property="friendsName" destination="1tR-J3-AaR" id="jzW-Pz-uaD"/>
                                 </connections>
@@ -1302,7 +1303,20 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                             <outlet property="delegate" destination="56Q-M3-ppB" id="snC-ah-f7C"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Fg6-EN-OGM"/>
+                    <navigationItem key="navigationItem" id="Fg6-EN-OGM">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="TSq-wd-QaG">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kgy-t8-XLb">
+                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Menu">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="menuButton:" destination="56Q-M3-ppB" eventType="touchUpInside" id="1RV-B6-0Th"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h8c-qH-Ule" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
