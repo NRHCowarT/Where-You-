@@ -55,8 +55,36 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
     
     @IBAction func flagContent(sender: AnyObject) {
         
-        picture?["flagged"] = true
-        picture?.saveInBackground()
+        let alertController = UIAlertController(title: nil, message: "Would you like to report this post.", preferredStyle: .ActionSheet)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel) { (action) in
+            
+            // ...
+        }
+        alertController.addAction(cancelAction)
+        
+        let blockAction = UIAlertAction(title: "Report", style: .Destructive) { (action) in
+            
+            self.picture?["flagged"] = true
+            self.picture?.saveInBackground()
+            
+            var guessed = PFUser.currentUser()["guessed"] as? [String] ?? []
+            guessed.append(self.picture!.objectId)
+            PFUser.currentUser()["guessed"] = guessed
+            PFUser.currentUser().saveInBackground()
+            
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+            
+            println(action)
+        }
+        alertController.addAction(blockAction)
+        
+        self.presentViewController(alertController, animated: true) {
+            
+//            self.timer?.invalidate()
+            // ...
+        }
+        
     }
     
     @IBAction func guessSelectionButton(sender: UIButton) {
@@ -105,7 +133,6 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
             score.value = Int64(playerScore)
             GKScore.reportScores([score], withCompletionHandler: {(error) -> Void in
                 
-                println("score reported")
                 
             })
             
@@ -185,11 +212,11 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
         
         shuffleVenues.append(correctLocation["name"] as! String)
         
-        println(shuffleVenues)
+//        println(shuffleVenues)
         
         shuffleVenues.shuffle()
         
-        println(shuffleVenues)
+//        println(shuffleVenues)
         
         for venues in shuffleVenues {
             
@@ -198,7 +225,7 @@ class GuessFriendsDetailVC: UIViewController, GKGameCenterControllerDelegate {
             
         }
         
-        println(guessFriendsVenue)
+//        println(guessFriendsVenue)
         
         venue1.setTitle("\(guessFriendsVenue[0])", forState: UIControlState.Normal)
         venue2.setTitle("\(guessFriendsVenue[1])", forState: UIControlState.Normal)

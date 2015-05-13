@@ -35,7 +35,7 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
                         
                         let userData = result as! NSDictionary
                         
-                        println(userData)
+//                        println(userData)
                         
                         let facebookID = userData["id"] as! String
                         let name = userData["name"] as! String

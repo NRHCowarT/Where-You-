@@ -18,31 +18,29 @@ class GuessFriendTableVC: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        println(GameData.mainData().gameItems)
-        
+                
         GameData.mainData().refreshGameItems { () -> () in
         
             self.tableView.reloadData()
         
         }
-        
-        var friendRequest = FBRequest.requestForMyFriends()
-        
-        friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
-            
-            if error == nil {
-                
-                
-                let resultInfo = result as! NSDictionary
-                
-                GameData.mainData().myFriends = resultInfo["data"] as! NSArray
-                                
-                self.tableView.reloadData()
-                
-            }
-            
-        }
+//        
+//        var friendRequest = FBRequest.requestForMyFriends()
+//        
+//        friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+//            
+//            if error == nil {
+//                
+//                
+//                let resultInfo = result as! NSDictionary
+//                
+//                GameData.mainData().myFriends = resultInfo["data"] as! NSArray
+//                                
+//                self.tableView.reloadData()
+//                
+//            }
+//            
+//        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

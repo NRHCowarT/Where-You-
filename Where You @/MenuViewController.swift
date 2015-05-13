@@ -44,7 +44,7 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-        println(PFUser.currentUser())
+//        println(PFUser.currentUser())
         
         if PFUser.currentUser() == nil {
             
@@ -74,7 +74,7 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
                     
                     GameData.mainData().myFriends = resultInfo["data"] as! NSArray
                     
-                    println(GameData.mainData().myFriends)
+//                    println(GameData.mainData().myFriends)
                     
                     let friendsId = GameData.mainData().myFriends.valueForKey("id") as? NSArray
                     

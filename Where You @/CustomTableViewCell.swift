@@ -19,9 +19,9 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet weak var blockUser: UISwitch!
     
     @IBAction func blockUserSwitch(sender: AnyObject) {
-        
-        println("blocked")
+    
     }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

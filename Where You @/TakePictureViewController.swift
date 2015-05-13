@@ -11,9 +11,7 @@ import UIKit
 class TakePictureViewController: UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     var imagePicker = UIImagePickerController()
-    
-    var pictureNumber:Int = 0
-    
+        
     @IBOutlet weak var pictureCapturedView: UIImageView!
    
     @IBOutlet weak var takePictureLabel: UIButton!
@@ -28,6 +26,13 @@ class TakePictureViewController: UIViewController, UINavigationControllerDelegat
         
         presentViewController(imagePicker, animated: true, completion: nil)
         
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        if pictureCapturedView.image == nil{
+            
+            presentViewController(imagePicker, animated: true, completion: nil)
+        }
     }
     
     override func viewDidLoad() {

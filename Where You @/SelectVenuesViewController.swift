@@ -87,7 +87,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         
         GameData.mainData().selectedVenues.append(venue)
         
-        println(GameData.mainData().selectedVenues)
+//        println(GameData.mainData().selectedVenues)
         
         if GameData.mainData().selectedVenues.count == 3 {
             
@@ -114,7 +114,7 @@ class SelectVenuesViewController: UIViewController,CLLocationManagerDelegate,MKM
         myArray.removeObject(venue)
         GameData.mainData().selectedVenues = myArray as [AnyObject]
         
-        println(GameData.mainData().selectedVenues)
+//        println(GameData.mainData().selectedVenues)
     
     }
     

@@ -9,16 +9,43 @@
 import UIKit
 
 class BlockUsersTableVC: UITableViewController {
+    
+    var friendsID:String?
 
     @IBAction func menuButton(sender: AnyObject) {
         
         self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    @IBAction func blockUserSwitch(sender: AnyObject) {
+        
+        
+        
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
+        
+                var friendRequest = FBRequest.requestForMyFriends()
+        
+                friendRequest.startWithCompletionHandler { (connection, result, error) -> Void in
+        
+                    if error == nil {
+        
+        
+                        let resultInfo = result as! NSDictionary
+        
+                        GameData.mainData().myFriends = resultInfo["data"] as! NSArray
+        
+                        self.tableView.reloadData()
+                        
+                    }
+                    
+                }
+        
+//         addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
         
 //        GameData.mainData().refreshGameUsers { () -> () in
 //            
@@ -35,6 +62,21 @@ class BlockUsersTableVC: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    func stateChanged(switchState: UISwitch) {
+        
+        if switchState.on {
+            
+            
+            println("Switch On")
+            
+        } else {
+            
+            println("Switch Off")
+            
+        }
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -57,14 +99,14 @@ class BlockUsersTableVC: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("blockFriendCell", forIndexPath: indexPath) as! CustomTableViewCell
-
-        let friend: AnyObject = GameData.mainData().myFriends[indexPath.row]
         
-        let id = friend["id"] as! String
+        let friend:AnyObject = GameData.mainData().myFriends[indexPath.row]
+        
+        let friendsID = friend["id"] as! String
         
         cell.friendsName.text = friend["name"] as? String
         
-        if let url = NSURL(string: "https://graph.facebook.com/\(id)/picture?type=large&return_ssl_resources=1" as String) {
+        if let url = NSURL(string: "https://graph.facebook.com/\(friendsID)/picture?type=large&return_ssl_resources=1" as String) {
             
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), { () -> Void in
                 
@@ -83,11 +125,41 @@ class BlockUsersTableVC: UITableViewController {
             
         }
         
+//        cell.blockUser.addTarget(self, action: Selector("stateChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+        
+//        func stateChanged(switchState: UISwitch) {
+//            
+//            if switchState.on {
+//                
+////                let id = friend["id"]
+//                println("Switch On")
+//                
+//            } else {
+//                
+//                println("Switch Off")
+//                
+//            }
+//            
+//        }
+        
+        
         
         return cell
     }
     
 
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("BlockUsersDetailVC") as! BlockUsersDetailVC
+        vc.friend = GameData.mainData().myFriends[indexPath.row] as! FBGraphObject
+//        var cell = self.tableView(self.tableView, cellForRowAtIndexPath: indexPath) as! CustomTableViewCell
+//        vc.image = cell.fBProfilePic
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
