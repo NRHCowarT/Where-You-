@@ -19,7 +19,6 @@
 		9823FA511AFEB50800AA68E8 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823FA501AFEB50800AA68E8 /* ArrayExtensions.swift */; };
 		982662131AB9CC7200BBDA50 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982662121AB9CC7200BBDA50 /* CustomTableViewCell.swift */; };
 		98315BE81AE004F40006DBF7 /* EULAViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98315BE71AE004F40006DBF7 /* EULAViewController.swift */; };
-		984CEA981B037B3200379109 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		984D27091AA3B9AE0026C700 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 984D27081AA3B9AE0026C700 /* Images.xcassets */; };
 		984D270C1AA3B9AE0026C700 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 984D270A1AA3B9AE0026C700 /* LaunchScreen.xib */; };
 		984D27181AA3B9AE0026C700 /* Where_You__Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D27171AA3B9AE0026C700 /* Where_You__Tests.swift */; };
@@ -42,6 +41,7 @@
 		987C56651AE71A31000A705D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987C56641AE71A31000A705D /* Main.storyboard */; };
 		987C56671AE71A49000A705D /* CustomLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C56661AE71A49000A705D /* CustomLocationViewController.swift */; };
 		9895EEBD1AC9C3F400FD229F /* GameFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9895EEBC1AC9C3F400FD229F /* GameFlowViewController.swift */; };
+		98C9D8271B0E47BC00F32C2C /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		98E6786C1AA909E700CB2AF8 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E6786A1AA909E700CB2AF8 /* FBAudienceNetwork.framework */; };
 		98EC31401AFBF22100249911 /* BlockUsersDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98EC313F1AFBF22100249911 /* BlockUsersDetailVC.swift */; };
 		98EF11631AE8B404000A2B58 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273F1AA3BD3A0026C700 /* libsqlite3.dylib */; };
@@ -117,7 +117,7 @@
 				984D27381AA3BCEE0026C700 /* Security.framework in Frameworks */,
 				98EF11631AE8B404000A2B58 /* libsqlite3.dylib in Frameworks */,
 				984D27361AA3BCE10026C700 /* QuartzCore.framework in Frameworks */,
-				984CEA981B037B3200379109 /* FacebookSDK.framework in Frameworks */,
+				98C9D8271B0E47BC00F32C2C /* FacebookSDK.framework in Frameworks */,
 				984D27341AA3BCD40026C700 /* MobileCoreServices.framework in Frameworks */,
 				984D27321AA3BCBD0026C700 /* CoreLocation.framework in Frameworks */,
 				984D27301AA3BCB00026C700 /* CoreGraphics.framework in Frameworks */,
@@ -587,6 +587,9 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,6 +610,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",

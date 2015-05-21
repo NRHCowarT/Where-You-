@@ -43,6 +43,7 @@ class LoginViewController: UIViewController, dismissTheViewDelegate {
                         user["name"] = userData["name"] as! String
                         user["avatar"] = "https://graph.facebook.com/\(facebookID)/picture?type=large&return_ssl_resources=1"
                         user["facebookId"] = facebookID
+//                        user["ejected"] = false
                         
                         var friendRequest = FBRequest.requestForMyFriends()
                         

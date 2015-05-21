@@ -54,6 +54,22 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
         } else {
             
+//            var user = PFUser.currentUser()
+//                        
+//            var ejected = user["ejected"] as? Boolean
+//
+//            println(ejected)
+//                
+//            if ejected != false {
+//
+////                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+////                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
+////                self.presentViewController(vc, animated: true, completion: nil)
+//               
+//                println("ejected")
+//                
+//            }
+            
             GKLocalPlayer.localPlayer().authenticateHandler = {(viewController: UIViewController!,error: NSError!) -> Void in
                 
                 if viewController != nil { self.presentViewController(viewController, animated: true, completion: nil) }
