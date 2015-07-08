@@ -11,6 +11,9 @@ import GameKit
 
 class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
     
+    var userObjects:[PFObject] = []
+    
+    
     @IBAction func takePhotoButton(sender: AnyObject) {
     }
     
@@ -44,7 +47,7 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
         
-//        println(PFUser.currentUser())
+        //        println(PFUser.currentUser())
         
         if PFUser.currentUser() == nil {
             
@@ -54,22 +57,28 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
         } else {
             
-//            var user = PFUser.currentUser()
-//                        
-//            var ejected = user["ejected"] as? Boolean
-//
-//            println(ejected)
-//                
-//            if ejected != false {
-//
-////                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-////                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginVC") as! LoginViewController
-////                self.presentViewController(vc, animated: true, completion: nil)
-//               
-//                println("ejected")
-//                
-//            }
             
+            var user = PFUser.currentUser()
+            
+            user.fetchInBackgroundWithBlock({ (updatedUser, error) -> Void in
+                var ejectedNSNumber = updatedUser["ejected"]
+                
+                var ejectedBool = ejectedNSNumber.boolValue
+                
+                if ejectedBool != nil {
+                
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("EjectedVC") as! EjectedVC
+                self.presentViewController(vc, animated: true, completion: nil)
+                    
+                }
+            })
+            
+            
+            
+            println(user)
+            
+        
             GKLocalPlayer.localPlayer().authenticateHandler = {(viewController: UIViewController!,error: NSError!) -> Void in
                 
                 if viewController != nil { self.presentViewController(viewController, animated: true, completion: nil) }
@@ -90,7 +99,7 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
                     
                     GameData.mainData().myFriends = resultInfo["data"] as! NSArray
                     
-//                    println(GameData.mainData().myFriends)
+                    //                    println(GameData.mainData().myFriends)
                     
                     let friendsId = GameData.mainData().myFriends.valueForKey("id") as? NSArray
                     
@@ -104,11 +113,12 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
             
         }
         
+        //        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-
+        
     }
     
     
