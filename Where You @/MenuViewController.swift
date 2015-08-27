@@ -61,15 +61,22 @@ class MenuViewController: UIViewController, GKGameCenterControllerDelegate {
             var user = PFUser.currentUser()
             
             user.fetchInBackgroundWithBlock({ (updatedUser, error) -> Void in
-                var ejectedNSNumber = updatedUser["ejected"]
                 
-                var ejectedBool = ejectedNSNumber.boolValue
+                var ejectedNSNumber = updatedUser["ejected"] as? Bool
                 
-                if ejectedBool != nil {
+                var ejectedBool = ejectedNSNumber
+                
+                if ejectedBool == true {
                 
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let vc = self.storyboard?.instantiateViewControllerWithIdentifier("EjectedVC") as! EjectedVC
                 self.presentViewController(vc, animated: true, completion: nil)
+                    
+                } else {
+                    
+                    user["ejected"] = false
+                    
+                    PFUser.currentUser().saveInBackground()
                     
                 }
             })
