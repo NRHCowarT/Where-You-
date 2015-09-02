@@ -68,7 +68,7 @@ class GuessFriendTableVC: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("customFriendCell", forIndexPath: indexPath) as!CustomTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("customFriendCell", forIndexPath: indexPath) as! CustomTableViewCell
 
         let picture = GameData.mainData().gameItems[indexPath.row]
         

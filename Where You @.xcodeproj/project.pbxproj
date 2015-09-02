@@ -37,7 +37,7 @@
 		984D273C1AA3BD120026C700 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273B1AA3BD120026C700 /* SystemConfiguration.framework */; };
 		984D273E1AA3BD250026C700 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 984D273D1AA3BD250026C700 /* libz.dylib */; };
 		984D274B1AA3DD680026C700 /* Designalbes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984D274A1AA3DD680026C700 /* Designalbes.swift */; };
-		985E0AD21B8FC31C005E66FC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
+		985E0AD51B9764B7005E66FC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98E678691AA909E700CB2AF8 /* FacebookSDK.framework */; };
 		987C56631AE1A1A8000A705D /* BlockUsersTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C56621AE1A1A8000A705D /* BlockUsersTableVC.swift */; };
 		987C56651AE71A31000A705D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 987C56641AE71A31000A705D /* Main.storyboard */; };
 		987C56671AE71A49000A705D /* CustomLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 987C56661AE71A49000A705D /* CustomLocationViewController.swift */; };
@@ -119,7 +119,7 @@
 				984D27381AA3BCEE0026C700 /* Security.framework in Frameworks */,
 				98EF11631AE8B404000A2B58 /* libsqlite3.dylib in Frameworks */,
 				984D27361AA3BCE10026C700 /* QuartzCore.framework in Frameworks */,
-				985E0AD21B8FC31C005E66FC /* FacebookSDK.framework in Frameworks */,
+				985E0AD51B9764B7005E66FC /* FacebookSDK.framework in Frameworks */,
 				984D27341AA3BCD40026C700 /* MobileCoreServices.framework in Frameworks */,
 				984D27321AA3BCBD0026C700 /* CoreLocation.framework in Frameworks */,
 				984D27301AA3BCB00026C700 /* CoreGraphics.framework in Frameworks */,
@@ -627,6 +627,12 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -634,6 +640,7 @@
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Where You @-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -764,6 +771,12 @@
 					"$(PROJECT_DIR)/Where",
 					You,
 					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
+					"$(PROJECT_DIR)/Where",
+					You,
+					"@",
 				);
 				INFOPLIST_FILE = "Where You @/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -771,6 +784,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Where You @-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

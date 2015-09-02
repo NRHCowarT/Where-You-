@@ -21,19 +21,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="VI0-17-Ca3">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-L2-mRn">
-                                <rect key="frame" x="200" y="145" width="200" height="150"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="400" id="NdO-Hw-Z0n"/>
-                                    <constraint firstAttribute="width" constant="200" id="QrK-1d-rqQ"/>
-                                    <constraint firstAttribute="height" constant="150" id="Qxo-GX-aY0"/>
-                                    <constraint firstAttribute="height" constant="250" id="ZED-5q-EOO"/>
+                                    <constraint firstAttribute="height" constant="600" id="0Sj-Of-5vr"/>
+                                    <constraint firstAttribute="width" constant="600" id="ecC-UG-3k8"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="NdO-Hw-Z0n"/>
-                                        <exclude reference="ZED-5q-EOO"/>
+                                        <exclude reference="0Sj-Of-5vr"/>
+                                        <exclude reference="ecC-UG-3k8"/>
                                     </mask>
                                 </variation>
                             </imageView>
@@ -57,20 +52,46 @@
                                     <action selector="loginButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="KfJ-3R-emC"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="hs3-L2-mRn">
+                                <rect key="frame" x="200" y="145" width="200" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="400" id="NdO-Hw-Z0n"/>
+                                    <constraint firstAttribute="width" constant="200" id="QrK-1d-rqQ"/>
+                                    <constraint firstAttribute="height" constant="150" id="Qxo-GX-aY0"/>
+                                    <constraint firstAttribute="height" constant="250" id="ZED-5q-EOO"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="NdO-Hw-Z0n"/>
+                                        <exclude reference="ZED-5q-EOO"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <constraints>
+                            <constraint firstItem="VI0-17-Ca3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="1fI-9V-VOs"/>
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="84" id="2uE-Yc-WE4"/>
+                            <constraint firstItem="VI0-17-Ca3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="7wn-fN-s6t"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VI0-17-Ca3" secondAttribute="bottom" id="8fC-vO-7jm"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VI0-17-Ca3" secondAttribute="bottom" id="Caq-8F-Dg4"/>
                             <constraint firstItem="VI0-17-Ca3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="De2-Pm-35e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VI0-17-Ca3" secondAttribute="trailing" id="E4Q-2a-4Nm"/>
                             <constraint firstItem="h3f-4W-h9B" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="GND-ro-uKm"/>
+                            <constraint firstItem="VI0-17-Ca3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="J5t-6w-aso"/>
+                            <constraint firstItem="VI0-17-Ca3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="LMr-h9-5nU"/>
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="RHo-xY-Uh6"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="h3f-4W-h9B" secondAttribute="bottom" constant="20" id="Uve-uI-Cdb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="VI0-17-Ca3" secondAttribute="trailing" constant="-16" id="Yhk-We-r9C"/>
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="125" id="bkb-0U-nIV"/>
+                            <constraint firstAttribute="trailing" secondItem="VI0-17-Ca3" secondAttribute="trailing" id="edJ-Ki-aTL"/>
                             <constraint firstItem="VI0-17-Ca3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="gge-cx-w2Z"/>
                             <constraint firstItem="h3f-4W-h9B" firstAttribute="top" secondItem="hs3-L2-mRn" secondAttribute="bottom" constant="167" id="gpc-yO-8cY"/>
+                            <constraint firstItem="VI0-17-Ca3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="iWf-fP-DRf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="hs3-L2-mRn" secondAttribute="trailing" constant="84" id="j6P-Qp-hZs"/>
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="103" id="jDk-yt-mZS"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VI0-17-Ca3" secondAttribute="bottom" id="k9u-i7-SRP"/>
+                            <constraint firstItem="VI0-17-Ca3" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="pA6-ro-fRp"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="VI0-17-Ca3" secondAttribute="bottom" id="rLz-g4-nrr"/>
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="rcQ-wb-OcH"/>
                             <constraint firstItem="hs3-L2-mRn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="120" id="sfA-Ma-iOs"/>
                             <constraint firstAttribute="centerX" secondItem="hs3-L2-mRn" secondAttribute="centerX" id="ugw-N8-4uJ"/>
@@ -78,6 +99,14 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="1fI-9V-VOs"/>
+                                <exclude reference="7wn-fN-s6t"/>
+                                <exclude reference="De2-Pm-35e"/>
+                                <exclude reference="E4Q-2a-4Nm"/>
+                                <exclude reference="J5t-6w-aso"/>
+                                <exclude reference="Yhk-We-r9C"/>
+                                <exclude reference="gge-cx-w2Z"/>
+                                <exclude reference="pA6-ro-fRp"/>
                                 <exclude reference="2uE-Yc-WE4"/>
                                 <exclude reference="RHo-xY-Uh6"/>
                                 <exclude reference="j6P-Qp-hZs"/>
@@ -85,6 +114,9 @@
                                 <exclude reference="rcQ-wb-OcH"/>
                                 <exclude reference="sfA-Ma-iOs"/>
                                 <exclude reference="gpc-yO-8cY"/>
+                                <exclude reference="8fC-vO-7jm"/>
+                                <exclude reference="k9u-i7-SRP"/>
+                                <exclude reference="rLz-g4-nrr"/>
                             </mask>
                         </variation>
                     </view>
@@ -115,7 +147,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aga-H0-9u5" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aga-H0-9u5" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
                                             <rect key="frame" x="310" y="540" width="270" height="40"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -132,9 +164,12 @@
                                                 <action selector="declineTerms:" destination="mgk-Kg-38o" eventType="touchUpInside" id="Zfc-WJ-Bny"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-ad-FDj" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NsD-ad-FDj" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
                                             <rect key="frame" x="20" y="540" width="270" height="40"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Uzj-RP-kTf"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <state key="normal" title="Accept Terms">
                                                 <color key="titleColor" red="0.086274509799999996" green="0.40784313729999999" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -149,10 +184,10 @@
                                                 <action selector="acceptTerms:" destination="mgk-Kg-38o" eventType="touchUpInside" id="yWj-22-y5b"/>
                                             </connections>
                                         </button>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-gA-GnN">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8k-gA-GnN">
                                             <rect key="frame" x="25" y="25" width="550" height="500"/>
                                             <color key="backgroundColor" red="0.43529411764705883" green="0.44313725490196076" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
-                                            <mutableString key="text">Where You @? App End User License Agreement
+                                            <string key="text">Where You @? App End User License Agreement
 This End User License Agreement (“Agreement”) is between you and Where You @? and governs use of this app made available through the Apple App Store. By installing the Where You @? App, you agree to be bound by this Agreement and understand that there is no tolerance for objectionable content. If you do not agree with the terms and conditions of this Agreement, you are not entitled to use the Where You @? App.
 In order to ensure Where You @? provides the best experience possible for everyone, we strongly enforce a no tolerance policy for objectionable content. If you see inappropriate content, please use the “Report as offensive” feature found at the top left corner of each post.
 1. Parties
@@ -172,7 +207,7 @@ Where You @? does provide minimal maintenance or support for it but not to the e
 8. Product Claims
 Where You @?, not Apple, is responsible for addressing any claims by you relating to the Where You @? App or use of it, including, but not limited to: (i) any product liability claim; (ii) any claim that the Where You @? App fails to conform to any applicable legal or regulatory requirement; and (iii) any claim arising under consumer protection or similar legislation. Nothing in this Agreement shall be deemed an admission that you may have such claims.
 9. Third Party Intellectual Property Claims
-Where You @? shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Where You @? App. To the extent Where You @? is required to provide indemnification by applicable law, Where You @?, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Where You @? App or your use of it infringes any third party intellectual property right.</mutableString>
+Where You @? shall not be obligated to indemnify or defend you with respect to any third party claim arising out or relating to the Where You @? App. To the extent Where You @? is required to provide indemnification by applicable law, Where You @?, not Apple, shall be solely responsible for the investigation, defense, settlement and discharge of any claim that the Where You @? App or your use of it infringes any third party intellectual property right.</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                         </textView>
@@ -291,21 +326,6 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="DXE-Nv-cCT">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-g0-eVq">
-                                <rect key="frame" x="200" y="145" width="200" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="EFg-gc-dlU"/>
-                                    <constraint firstAttribute="width" constant="200" id="tBa-VO-ojt"/>
-                                    <constraint firstAttribute="height" constant="150" id="xAM-NC-usM"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yt6-R2-htU"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="EFg-gc-dlU"/>
-                                        <exclude reference="yt6-R2-htU"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yXW-rh-P43" customClass="DesignalbeButton" customModule="Where_You__" customModuleProvider="target">
                                 <rect key="frame" x="16" y="480" width="568" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -410,6 +430,21 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                     <segue destination="zty-GZ-89g" kind="presentation" id="g67-vW-Juj"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="cMt-g0-eVq">
+                                <rect key="frame" x="200" y="145" width="200" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="150" id="EFg-gc-dlU"/>
+                                    <constraint firstAttribute="width" constant="200" id="tBa-VO-ojt"/>
+                                    <constraint firstAttribute="height" constant="150" id="xAM-NC-usM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="yt6-R2-htU"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="EFg-gc-dlU"/>
+                                        <exclude reference="yt6-R2-htU"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -418,6 +453,8 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                             <constraint firstItem="e4u-VH-tAH" firstAttribute="trailing" secondItem="Wxh-h4-Pcq" secondAttribute="trailingMargin" id="Bpi-8m-aPE"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="top" secondItem="yXW-rh-P43" secondAttribute="bottom" constant="20" id="Cmj-qE-Cu7"/>
                             <constraint firstItem="NPb-Qs-jBZ" firstAttribute="top" secondItem="DXE-Nv-cCT" secondAttribute="bottom" id="EB1-cY-9Fd"/>
+                            <constraint firstItem="DXE-Nv-cCT" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leading" id="Hxg-K9-IA0"/>
+                            <constraint firstItem="DXE-Nv-cCT" firstAttribute="top" secondItem="Wxh-h4-Pcq" secondAttribute="top" id="KTv-p6-mJO"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="top" secondItem="yXW-rh-P43" secondAttribute="bottom" constant="20" id="OkU-AR-UHR"/>
                             <constraint firstItem="e4u-VH-tAH" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="Qhw-rz-UZV"/>
                             <constraint firstItem="zi6-KL-jU9" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="Y69-5u-3vT"/>
@@ -425,25 +462,31 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                             <constraint firstItem="DXE-Nv-cCT" firstAttribute="top" secondItem="Wxh-h4-Pcq" secondAttribute="topMargin" id="a9a-Lt-bAk"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="aec-iM-EuW"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="trailing" secondItem="Wxh-h4-Pcq" secondAttribute="trailingMargin" id="bdy-LR-VjY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DXE-Nv-cCT" secondAttribute="trailing" constant="-16" id="c5m-PA-NwO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DXE-Nv-cCT" secondAttribute="trailing" id="c5m-PA-NwO"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="eFB-lD-otk"/>
+                            <constraint firstItem="NPb-Qs-jBZ" firstAttribute="top" secondItem="DXE-Nv-cCT" secondAttribute="bottom" id="i3Y-sD-ZS0"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="top" secondItem="yXW-rh-P43" secondAttribute="bottom" constant="27" id="irG-XK-mzR"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="l9s-0s-ycE"/>
                             <constraint firstItem="e4u-VH-tAH" firstAttribute="top" secondItem="WrB-Wx-NyQ" secondAttribute="bottom" id="nus-5s-Vzt"/>
                             <constraint firstItem="yXW-rh-P43" firstAttribute="top" secondItem="zi6-KL-jU9" secondAttribute="bottom" constant="20" id="u75-rU-pIA"/>
                             <constraint firstAttribute="centerX" secondItem="cMt-g0-eVq" secondAttribute="centerX" id="vKT-ER-dUm"/>
-                            <constraint firstItem="DXE-Nv-cCT" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" constant="-16" id="wAX-iq-3Dc"/>
+                            <constraint firstAttribute="trailing" secondItem="DXE-Nv-cCT" secondAttribute="trailing" id="w1k-v6-7HG"/>
+                            <constraint firstItem="DXE-Nv-cCT" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="wAX-iq-3Dc"/>
                             <constraint firstItem="zi6-KL-jU9" firstAttribute="trailing" secondItem="Wxh-h4-Pcq" secondAttribute="trailingMargin" id="wyM-Cf-ayF"/>
                             <constraint firstItem="yXW-rh-P43" firstAttribute="leading" secondItem="Wxh-h4-Pcq" secondAttribute="leadingMargin" id="z6j-5S-Lam"/>
                             <constraint firstItem="dF1-K1-hwS" firstAttribute="top" secondItem="yXW-rh-P43" secondAttribute="bottom" constant="20" id="zWF-R7-HLU"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="a9a-Lt-bAk"/>
+                                <exclude reference="c5m-PA-NwO"/>
+                                <exclude reference="wAX-iq-3Dc"/>
                                 <exclude reference="OkU-AR-UHR"/>
                                 <exclude reference="eFB-lD-otk"/>
                                 <exclude reference="irG-XK-mzR"/>
                                 <exclude reference="l9s-0s-ycE"/>
                                 <exclude reference="zWF-R7-HLU"/>
+                                <exclude reference="EB1-cY-9Fd"/>
                             </mask>
                         </variation>
                     </view>
@@ -474,8 +517,11 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                     <constraint firstAttribute="height" constant="150" id="eUs-15-3p1"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You have been ejected from using this app. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-9r-bGz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have been ejected from using this app. " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ATh-9r-bGz">
                                 <rect key="frame" x="16" y="322" width="568" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="JmC-qy-Zde"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1157,8 +1203,12 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                     </mask>
                                 </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-sh-1hD">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dAt-sh-1hD">
                                 <rect key="frame" x="19" y="33" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0HG-xn-pOX"/>
+                                    <constraint firstAttribute="width" constant="30" id="EPU-HN-vwB"/>
+                                </constraints>
                                 <state key="normal" image="block">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1312,8 +1362,12 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                                 <constraint firstAttribute="width" constant="60" id="CoB-KT-Awc"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Friends Name Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-J3-AaR">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends Name Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-J3-AaR">
                                             <rect key="frame" x="98" y="15" width="425" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="425" id="cNJ-x7-D6P"/>
+                                                <constraint firstAttribute="height" constant="40" id="gQX-pT-LEq"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -1431,9 +1485,10 @@ Where You @? shall not be obligated to indemnify or defend you with respect to a
                                     </mask>
                                 </variation>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Block this user?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvi-Fb-wSW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Block this user?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qvi-Fb-wSW">
                                 <rect key="frame" x="50" y="377" width="150" height="40"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Yzn-Wq-xrO"/>
                                     <constraint firstAttribute="width" constant="150" id="pJt-Ym-COy"/>
                                     <constraint firstAttribute="width" constant="150" id="qo6-x0-yGb"/>
                                 </constraints>
